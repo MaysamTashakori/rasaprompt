@@ -40,3 +40,8 @@ cd /opt/rasaprompt && BOTS="telegram bale" bash deploy/update.sh
 | پشتیبان روزانه | `crontab -e` ← `0 3 * * * bash /opt/rasaprompt/deploy/backup.sh` |
 
 داده‌ها (اعتبارها، کدهای اعتبار، کاربران ربات) در volume `rasaprompt_data` می‌مانند و با به‌روزرسانی پاک نمی‌شوند.
+
+## ۵. استقرار خودکار با GitHub Actions (پیشنهادی)
+یک‌بار در GitHub ← مخزن ← Settings ← Secrets and variables ← Actions این‌ها را اضافه کنید:
+`SERVER_HOST` (IP سرور)، `SERVER_USER` (root)، `SERVER_PASSWORD` (رمز **تازه**) یا بهتر `SERVER_SSH_KEY`، و اختیاری `SERVER_DOMAIN`.
+از آن به بعد هر push روی شاخه‌ی پروژه: تست و build ← ارسال به سرور ← نصب/به‌روزرسانی. نتیجه در تب Actions دیده می‌شود.

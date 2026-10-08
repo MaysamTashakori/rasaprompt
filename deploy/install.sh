@@ -23,9 +23,12 @@ if [ -n "${REPO_URL:-}" ]; then
   else git clone -q --branch "${BRANCH:-main}" "$REPO_URL" "$DIR"; fi
 else
   ZIP=$(ls -t /root/rasaprompt-*.zip 2>/dev/null | head -1 || true)
+  # فایل‌هایی که پنل ادمین روی سرور تغییر می‌دهد نباید با نسخه‌ی مخزن بازنویسی شوند
+  KEEP=$(mktemp -d); for f in content/sources.json content/agents-state.json content/agent-queue.json content/sources-pending.json; do [ -f "$DIR/$f" ] && mkdir -p "$KEEP/$(dirname $f)" && cp "$DIR/$f" "$KEEP/$f"; done
   [ -n "$ZIP" ] || { echo "زیپ پروژه در /root پیدا نشد و REPO_URL هم داده نشده"; exit 1; }
   TMP=$(mktemp -d) && unzip -q "$ZIP" -d "$TMP"
   mkdir -p "$DIR" && cp -a "$TMP"/rasaprompt/. "$DIR"/ && rm -rf "$TMP"
+  cp -a "$KEEP"/. "$DIR"/ && rm -rf "$KEEP"
 fi
 cd "$DIR"
 
@@ -45,6 +48,11 @@ echo "==> دیوار آتش"
 ufw allow 22/tcp >/dev/null; ufw allow 80/tcp >/dev/null; ufw allow 443/tcp >/dev/null; ufw --force enable >/dev/null
 
 echo "==> ساخت و اجرا"
+# ربات‌ها: اگر BOTS داده نشده، از روی توکن‌های موجود در app/.env تشخیص داده می‌شوند
+if [ -z "$BOTS" ]; then
+  grep -qE '^TELEGRAM_BOT_TOKEN=.+' app/.env && BOTS="$BOTS telegram"
+  grep -qE '^BALE_BOT_TOKEN=.+' app/.env && BOTS="$BOTS bale"
+fi
 PROFILES=""; for b in $BOTS; do PROFILES="$PROFILES --profile $b"; done
 docker compose -f docker-compose.prod.yml $PROFILES up -d --build
 docker compose -f docker-compose.prod.yml ps
