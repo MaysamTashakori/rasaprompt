@@ -1,0 +1,98 @@
+{
+  "version": 1,
+  "checked_at": "2026-10-08",
+  "sources": [
+    {
+      "key": "promptschat",
+      "name": "prompts.chat (f/awesome-chatgpt-prompts)",
+      "url": "https://github.com/f/awesome-chatgpt-prompts",
+      "license_content": "CC0-1.0",
+      "license_code": "MIT",
+      "commit": "7d3f248962d1dca209d59e033524bcb86c2b26b8",
+      "commit_date": "2026-10-01",
+      "files": "prompts.csv",
+      "imported": 2169,
+      "role": "هسته‌ی کتابخانه‌ی رایگان (Lite) و ایده برای نسخه‌های Pro",
+      "commercial_ok": true,
+      "note": "دوگانه: محتوای پرامپت CC0؛ کد MIT (LICENSE ریشه). هیچ تعهد انتساب ندارد، ولی ما نام را ثبت می‌کنیم."
+    },
+    {
+      "key": "shortcut",
+      "name": "ChatGPT-Shortcut (rockbenben)",
+      "url": "https://github.com/rockbenben/ChatGPT-Shortcut",
+      "license_content": "MIT",
+      "commit": "8e1f5f67e63dd957ff263a8af25ad9cfee3f8c50",
+      "commit_date": "2026-09-27",
+      "files": "src/data/prompt_ar.json, prompt_en.json",
+      "imported": 558,
+      "role": "بذر عربی (۲۷۹ پرامپت با عنوان/توضیح عربی) + ۱۶ زبان دیگر قابل استفاده",
+      "commercial_ok": true,
+      "note": "MIT: حفظ اعلان کپی‌رایت الزامی. بیشتر پرامپت‌ها برگرفته از منبع ۱ هستند؛ ترجمه‌ها ماشینی/جامعه‌ای و نیازمند QA بومی."
+    },
+    {
+      "key": "fabric",
+      "name": "Fabric (Daniel Miessler) patterns",
+      "url": "https://github.com/danielmiessler/fabric",
+      "license_content": "MIT",
+      "commit": "76cd291d4704a12933263ac7cb2d667509408db2",
+      "commit_date": "2026-10-07",
+      "files": "data/patterns/*/system.md",
+      "imported": 265,
+      "role": "پرامپت‌های سیستمی حرفه‌ای (خلاصه‌سازی، استخراج، تحلیل) → پایه‌ی رده‌ی Pro/Elite پس از بازنویسی و تست",
+      "commercial_ok": true,
+      "note": "MIT: حفظ اعلان کپی‌رایت الزامی. فعال و پرستاره؛ ریسک ناپایداری پایین."
+    },
+    {
+      "key": "peg",
+      "name": "Prompt Engineering Guide (DAIR.AI)",
+      "url": "https://github.com/dair-ai/Prompt-Engineering-Guide",
+      "license_content": "MIT",
+      "commit": "57673726396dd94acb23bdb1e67f27c78ee85a8e",
+      "commit_date": "2026-03-11",
+      "files": "pages/techniques/*.en.mdx",
+      "imported": 0,
+      "role": "مرجع تکنیک‌ها (CoT، ReAct، …) برای ساخت زنجیره‌های Elite و آکادمی؛ واردکردن انبوه نمی‌شود",
+      "commercial_ok": true,
+      "note": "MIT. محتوای آموزشی است نه کتابخانه‌ی پرامپت؛ استفاده‌ی ما: الهام + نقل با انتساب."
+    },
+    {
+      "key": "promptsource",
+      "name": "PromptSource (BigScience)",
+      "url": "https://github.com/bigscience-workshop/promptsource",
+      "license_content": "Apache-2.0",
+      "commit": "7dab96a3eeb3717cea633705135ebc488885d709",
+      "commit_date": "2023-10-23",
+      "files": "promptsource/templates/*",
+      "imported": 0,
+      "role": "الگوهای ارزیابی/تست (قالب‌های Jinja وظایف NLP) برای rubric و رگرسیون؛ نه فروش مستقیم",
+      "commercial_ok": true,
+      "note": "Apache-2.0 (NOTICE لازم). آخرین commit مهر ۲۰۲۳ → پایدار ولی غیرفعال؛ هر دیتاست زیرین لایسنس خودش را دارد."
+    }
+  ],
+  "rejected": [
+    {
+      "source": "anthropics/courses",
+      "reason": "CC BY-NC 4.0 — استفاده‌ی تجاری مجاز نیست"
+    },
+    {
+      "source": "anthropics/prompt-eng-interactive-tutorial",
+      "reason": "فایل LICENSE وجود ندارد → حق استفاده مبهم"
+    },
+    {
+      "source": "NirDiamant/Prompt_Engineering",
+      "reason": "لایسنس سفارشی (Custom License Agreement)"
+    },
+    {
+      "source": "0xeb/TheBigPromptLibrary",
+      "reason": "شامل پرامپت‌های سیستمی استخراج‌شده از محصولات دیگران؛ MIT صاحب مخزن حق دیگران را مجاز نمی‌کند"
+    },
+    {
+      "source": "Hugging Face datasets",
+      "reason": "از محیط ساخت در دسترس نبود؛ هر دیتاست لایسنس جدا دارد — فقط پس از بررسی"
+    },
+    {
+      "source": "سایت‌های تجاری (PromptBase، LaPrompt، …)",
+      "reason": "محتوای فروشی دارای حق نشر؛ فقط به‌عنوان سیگنال روند، هرگز کپی"
+    }
+  ]
+}
