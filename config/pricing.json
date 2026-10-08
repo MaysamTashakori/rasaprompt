@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "reviewed_at": "2026-10-08",
+  "note": "همه‌ی قیمت‌ها فرض اولیه‌اند؛ فقط با تأیید مالک تغییر کنند. جزئیات: docs/02-business-model-and-pricing.md",
+  "markets": {
+    "en": { "currency": "USD", "prices": {
+      "prompt_pro": [4.99, 6.99, 9.99],
+      "bundle": [29, 49, 79],
+      "plus_monthly": 12,
+      "plus_annual": 99,
+      "lifetime_founder": 149,
+      "lifetime_after_cap": 249,
+      "team_monthly": 39,
+      "business_monthly": 99
+    }},
+    "ar": { "currency": "USD", "display_currencies": ["SAR", "AED"], "ppp": { "EG": 0.5, "MA": 0.5 }, "prices": "same_as_en" },
+    "fa": { "currency": "IRT", "prices": {
+      "prompt_pro": [149000, 249000, 349000],
+      "bundle": [790000, 1390000, 1990000],
+      "plus_monthly": 299000,
+      "plus_annual": 2490000,
+      "lifetime_founder": 4900000,
+      "team_monthly": 990000
+    }}
+  },
+  "lifetime_founder_cap": 300,
+  "refund_days": 14,
+  "custom_prompt_monthly_cap": 2
+}
