@@ -18,11 +18,13 @@ export interface Update {
   callback_query?: { id: string; from: { id: number }; data?: string; message?: { message_id: number; chat: { id: number } } }
 }
 
-export interface Store { getLocale(user: number): Loc | undefined; setLocale(user: number, l: Loc): void }
+export interface Store { getLocale(user: number): Loc | undefined; setLocale(user: number, l: Loc): void; users?(): number[]; touch?(u: number, l: Loc): void }
 export class MemoryStore implements Store {
   private m = new Map<number, Loc>()
   getLocale(u: number) { return this.m.get(u) }
   setLocale(u: number, l: Loc) { this.m.set(u, l) }
+  users() { return [...this.m.keys()] }
+  touch(u: number, l: Loc) { if (!this.m.has(u)) this.m.set(u, l) }
 }
 
 export interface Ctx { platform: Platform; store: Store; siteUrl: string; today?: Date }
@@ -168,6 +170,7 @@ export function handleUpdate(u: Update, ctx: Ctx): Action[] {
   const chat = m.chat.id
   const user = m.from?.id ?? chat
   const loc = localeFor(ctx, user, m.from?.language_code)
+  ctx.store.touch?.(user, loc)
   const text = m.text.trim()
   const cmd = text.startsWith("/") ? text.slice(1).split(/[\s@]/)[0].toLowerCase() : null
   const key: Key | null = cmd ? (({ start: "help", trending: "trending", originals: "originals", fields: "fields", daily: "daily", random: "random", lang: "lang", help: "help", search: "search" }) as Record<string, Key>)[cmd] ?? null : menuKey(text)

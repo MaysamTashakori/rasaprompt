@@ -37,6 +37,11 @@ export function ChatApp({ locale, labels: l, starters }: { locale: string; label
   }, [])
 
   useEffect(() => {
+    window.addEventListener("rasa:credits", refresh)
+    return () => window.removeEventListener("rasa:credits", refresh)
+  }, [refresh])
+
+  useEffect(() => {
     refresh()
     // پرامپت ارسالی از صفحه‌ی پرامپت (sessionStorage، برای متن‌های طولانی)
     try {

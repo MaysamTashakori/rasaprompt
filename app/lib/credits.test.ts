@@ -23,3 +23,12 @@ test("free quota first, then paid; daily reset; no overdraft", () => {
   assert.equal(a.paid, 95)
   assert.equal(s.get("u", "2026-10-09").freeLeft, 30)
 })
+
+test("paid-only tiers never touch free quota", () => {
+  const s = new FileCreditStore(path.join(os.tmpdir(), `cr2-${Date.now()}.json`))
+  assert.equal(s.charge("u", 5, "p", "2026-10-08", true), false)
+  s.grant("u", 10, "buy")
+  assert.ok(s.charge("u", 5, "p", "2026-10-08", true))
+  assert.equal(s.get("u", "2026-10-08").freeLeft, 30)
+  assert.equal(s.get("u", "2026-10-08").paid, 5)
+})

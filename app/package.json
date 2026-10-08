@@ -10,7 +10,7 @@
     "lint": "eslint",
     "format": "prettier --write \"**/*.{ts,tsx}\"",
     "typecheck": "tsc --noEmit",
-    "test": "node --test --experimental-strip-types lib/*.test.ts pipelines/*.test.ts pipelines/ingest/*.test.ts pipelines/trends.test.ts pipelines/localize.test.ts lib/taxonomy.test.ts lib/catalog.test.ts bots/core.test.ts lib/credits.test.ts lib/llm-stream.test.ts",
+    "test": "node --test --experimental-strip-types lib/*.test.ts pipelines/*.test.ts pipelines/ingest/*.test.ts pipelines/trends.test.ts pipelines/localize.test.ts lib/taxonomy.test.ts lib/catalog.test.ts bots/core.test.ts lib/credits.test.ts lib/llm-stream.test.ts lib/license-detect.test.ts bots/admin.test.ts",
     "catalog": "tsx scripts/build-catalog.ts",
     "bot:telegram": "tsx scripts/bot-poll.ts telegram",
     "bot:bale": "tsx scripts/bot-poll.ts bale",

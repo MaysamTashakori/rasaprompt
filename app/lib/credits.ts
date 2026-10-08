@@ -16,7 +16,7 @@ interface Account { paid: number; freeLeft: number; freeDay: string; history: { 
 
 export interface CreditStore {
   get(uid: string, today?: string): Account
-  charge(uid: string, n: number, reason: string, today?: string): boolean
+  charge(uid: string, n: number, reason: string, today?: string, paidOnly?: boolean): boolean
   grant(uid: string, n: number, reason: string): void
 }
 
@@ -38,10 +38,10 @@ export class FileCreditStore implements CreditStore {
     return a
   }
   /** اول از سهمیه‌ی رایگان روزانه، بعد از اعتبار خریداری‌شده */
-  charge(uid: string, n: number, reason: string, today = day()) {
+  charge(uid: string, n: number, reason: string, today = day(), paidOnly = false) {
     const a = this.get(uid, today)
-    if (a.freeLeft + a.paid < n) return false
-    const fromFree = Math.min(a.freeLeft, n)
+    if ((paidOnly ? 0 : a.freeLeft) + a.paid < n) return false
+    const fromFree = paidOnly ? 0 : Math.min(a.freeLeft, n)
     a.freeLeft -= fromFree
     a.paid -= n - fromFree
     a.history.push({ at: new Date().toISOString(), delta: -n, reason })

@@ -1,6 +1,7 @@
 import type { Metadata } from "next"
 import { getTranslations, setRequestLocale } from "next-intl/server"
 import { ChatApp, type ChatLabels } from "@/components/chat-app"
+import { RedeemForm } from "@/components/redeem-form"
 import { originals, pick, type Loc } from "@/lib/catalog"
 import models from "@/config/models.json"
 
@@ -31,7 +32,8 @@ export default async function Chat({ params }: { params: Promise<{ locale: Loc }
             </div>
           ))}
         </div>
-        <p className="text-xs text-muted">{t("packsNote")}</p>
+        <RedeemForm labels={{ redeem: t("redeem"), redeemBtn: t("redeemBtn"), redeemOk: t("redeemOk", { n: "{n}" }), redeemBad: t("redeemBad") }} />
+        <p className="text-xs text-muted">{t("buyVia")}</p>
       </section>
     </div>
   )

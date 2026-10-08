@@ -148,7 +148,12 @@
   "you": "You",
   "ai": "Rasa",
   "packs": "Credit packs",
-  "packsNote": "Payments coming soon."
+  "packsNote": "Payments coming soon.",
+  "redeem": "Have a credit code?",
+  "redeemBtn": "Redeem",
+  "redeemOk": "{n} credits added.",
+  "redeemBad": "Invalid or used code.",
+  "buyVia": "To buy credits, message our Telegram or Bale bot."
  },
  "hero": {
   "cta": "Run a prompt",

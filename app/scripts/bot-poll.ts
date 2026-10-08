@@ -1,7 +1,8 @@
 // اجرای ربات با long-polling (توسعه‌ی محلی یا سرور بدون دامنه‌ی HTTPS)
 // TELEGRAM_BOT_TOKEN=… npx tsx scripts/bot-poll.ts telegram   |   BALE_BOT_TOKEN=… npx tsx scripts/bot-poll.ts bale
 import { BotApi } from "../bots/api"
-import { handleUpdate, type Platform } from "../bots/core"
+import type { Platform } from "../bots/core"
+import { dispatch } from "../bots/dispatch"
 import { FileStore } from "../bots/store"
 
 const platform = (process.argv[2] ?? "telegram") as Platform
@@ -18,7 +19,7 @@ for (;;) {
     const updates = await api.getUpdates(offset)
     for (const u of updates) {
       offset = u.update_id + 1
-      await api.run(handleUpdate(u, ctx))
+      await dispatch(api, u, ctx)
     }
   } catch (e) {
     console.error(`[${platform}]`, (e as Error).message)

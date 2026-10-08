@@ -30,7 +30,7 @@ export async function POST(req: Request) {
   if (process.env.LLM_PROVIDER && process.env.LLM_PROVIDER !== "mock" && !model) return json({ error: "model_not_configured" }, 503)
 
   const acct = store.get(uid)
-  const cap = acct.freeLeft + acct.paid
+  const cap = (tier.free ? acct.freeLeft : 0) + acct.paid
   // رده‌های غیررایگان فقط با اعتبار خریداری‌شده
   if (!tier.free && acct.paid <= 0) return json({ error: "paid_only" }, 402)
   const worst = creditsFor(tier.id, estimateTokens(chars) + tier.max_output)
@@ -48,9 +48,9 @@ export async function POST(req: Request) {
         let r = await it.next()
         while (!r.done) { out += r.value; controller.enqueue(enc.encode(r.value)); r = await it.next() }
         const used = r.value.usageTokens ?? estimateTokens(chars + out.length)
-        store.charge(uid, Math.min(creditsFor(tier.id, used), cap), `chat:${tier.id}:${used}t`)
+        store.charge(uid, Math.min(creditsFor(tier.id, used), cap), `chat:${tier.id}:${used}t`, undefined, !tier.free)
       } catch (e) {
-        if (out) store.charge(uid, Math.min(creditsFor(tier.id, estimateTokens(chars + out.length)), cap), `chat:${tier.id}:partial`)
+        if (out) store.charge(uid, Math.min(creditsFor(tier.id, estimateTokens(chars + out.length)), cap), `chat:${tier.id}:partial`, undefined, !tier.free)
         controller.enqueue(enc.encode(`\n\n⚠️ ${(e as Error).name === "AbortError" ? "stopped" : "error"}`))
       }
       controller.close()

@@ -47,3 +47,13 @@ export class BotApi {
     }
   }
 }
+
+/** ارسال همگانی با سقف نرخ (~۲۰ پیام در ثانیه) */
+export async function broadcast(api: BotApi, users: number[], text: string, reportTo?: number) {
+  let ok = 0, fail = 0
+  for (const u of users) {
+    try { await api.call("sendMessage", { chat_id: u, text }); ok++ } catch { fail++ }
+    await new Promise((r) => setTimeout(r, 50))
+  }
+  if (reportTo) await api.call("sendMessage", { chat_id: reportTo, text: `📣 ارسال همگانی تمام شد: ${ok} موفق، ${fail} ناموفق` }).catch(() => {})
+}
