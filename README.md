@@ -23,6 +23,9 @@ python3 ../finance/model.py     # مدل مالی (همه‌ی ورودی‌ها
 | `docs/02-business-model-and-pricing.md` | **مدل درآمد و قیمت‌گذاری** + `finance/` |
 | `docs/03…05` | معماری، مدل داده، پایپ‌لاین‌های خودکار |
 | `docs/06-agents.md` | مجموعه‌ی عامل‌ها |
+| `docs/10…12` | **منابع محتوا، مدل درآمد v2 (تبلیغات+افیلیت+اسپانسری)، عمودی‌های 3D/AI Elements/Skills** |
+| `agents/` | ۱۷ عامل با منابع و ممنوعیت‌ها |
+| `content/` | منابع مجاز (`sources.json`)، واردشده‌ها (`imported/`)، اعلان‌های لایسنس |
 | `docs/07…09` | نقشه‌ی راه، سئو، SOP و KPI |
 | `docs/living/` | **اسناد زنده**: DECISIONS (ADR)، LIMITATIONS، MEMORY، DESIGN |
 
@@ -31,4 +34,5 @@ python3 ../finance/model.py     # مدل مالی (همه‌ی ورودی‌ها
 - ⚠️ **FarsiUI:** رجیستری `farsiui.ir` از محیط ساخت در دسترس نبود، پس CLI اجرا نشد. کامپوننت‌های فعلی دست‌نویس و با کلاس‌های منطقی هستند. روی سیستم خودتان: `cd app && npx farsiui@latest init` سپس `npx farsiui@latest add <block>` و جایگزینی تدریجی (نگاشت بلاک‌ها: `docs/phase1-research/03-farsiui-assessment.md`).
 - ✅ دیتابیس: اسکیما Drizzle + مهاجرت + pgvector؛ بدون `DATABASE_URL` روی PGlite لوکال اجرا می‌شود (`app/db/client.ts`).
 - ✅ پایپ‌لاین تست: `app/pipelines/test-prompt.ts` (قواعد + داور LLM + stale)، با Mock تست شده؛ با `ANTHROPIC_API_KEY` به مدل واقعی وصل می‌شود (اجرای واقعی هنوز آزمایش نشده).
-- ⏳ هنوز ساخته نشده: اتصال صفحات به DB، احراز هویت، پرداخت، بقیه‌ی پایپ‌لاین‌ها، API/MCP.
+- ✅ ۲٬۹۹۲ پرامپت از ۳ منبع مجاز (CC0/MIT) در `content/imported/` با ردپای لایسنس؛ امتیازدهی ترند در `app/pipelines/trends.ts`.
+- ⏳ هنوز ساخته نشده: نمایش محتوای واردشده در سایت، اتصال صفحات به DB، احراز هویت، پرداخت، بقیه‌ی پایپ‌لاین‌ها، API/MCP.

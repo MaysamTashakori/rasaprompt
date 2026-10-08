@@ -6,6 +6,7 @@
 3. [ارزیابی FarsiUI و نگاشت بلاک‌ها به صفحات](phase1-research/03-farsiui-assessment.md)
 4. [پیشنهاد تکمیل‌شده (نسخه‌ی ۲)](phase1-research/04-refined-proposal.md): یافته‌های تازه، جهت‌گیری محصول، ریسک‌ها
 5. [مدل کسب‌وکار و قیمت‌گذاری](02-business-model-and-pricing.md) و اسناد ۰۰–۰۹ و `living/` (فاز ۲)
+6. [منابع محتوا](10-content-sources.md) · [مدل درآمد v2: تبلیغات و موتور رشد](11-revenue-v2-ads-and-growth-engine.md) · [عمودی‌های پریمیوم](12-premium-verticals.md)
 
 ## فاز ۲ — برنامه‌ی اجرایی (بعد از تأیید)
 بعد از تأیید فهرست ۷ سایت نوشته می‌شود و شامل این اسناد است:

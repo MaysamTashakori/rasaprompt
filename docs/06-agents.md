@@ -22,3 +22,6 @@
 2. خروجی ساختاریافته (JSON/Markdown) با فیلد `needs_human: true|false`.
 3. شکست دوبار پیاپی → توقف و هشدار، نه تلاش بی‌پایان.
 4. هزینه‌ی هر اجرا در `agent_run.cost_usd`؛ سقف روزانه اعمال می‌شود.
+
+---
+**نسخه ۲ (ADR-011..013):** تعریف کامل هر عامل با منابع مجاز، خروجی و ممنوعیت‌ها در پوشه‌ی [`agents/`](../agents/README.md) است (۱۷ عامل). عامل‌های تازه: Trend-Scout، Source-Curator، Builder-3D، Element-Smith، Skill-Smith، Ad-Ops. سند ۰۶ خلاصه‌ی نقش‌ها و `agents/*.md` مرجع قطعی است.

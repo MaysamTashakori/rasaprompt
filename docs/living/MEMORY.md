@@ -7,3 +7,6 @@
 - 2026-10-08 — Claude: farsiui.ir در دسترس نبود → کامپوننت‌ها دست‌نویس؛ همگام‌سازی FarsiUI روی سیستم مالک لازم است (LIMITATIONS).
 - 2026-10-08 — Claude: اسکیما Drizzle + مهاجرت (با pgvector) و کلاینت DB دوحالته (PGlite/Postgres)؛ در PGlite تأیید شد.
 - 2026-10-08 — Claude: pipelines/llm.ts و test-prompt.ts (چک قاعده‌ای، داور، stale) + ۵ تست سبز؛ با مدل واقعی آزمایش نشده.
+- 2026-10-08 — Claude: ۵ منبع مجاز انتخاب و commit قفل شد؛ ۲٬۹۹۲ پرامپت (promptschat ۲۱۶۹، shortcut ar/en ۵۵۸، fabric ۲۶۵) در content/imported؛ ردشده‌ها مستند.
+- 2026-10-08 — Claude: pipelines/trends.ts (امتیاز ترند + دروازه‌ی لایسنس) با تست.
+- 2026-10-08 — Claude: مدل درآمد v2 (سند ۱۱)، عمودی‌ها (سند ۱۲)، finance/model.py به‌روز (تبلیغ/افیلیت/اسپانسر/عمودی)، pricing.json v2.
