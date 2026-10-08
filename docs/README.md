@@ -5,6 +5,7 @@
 2. [کالبدشکافی rasa-promt.ir](phase1-research/02-rasa-promt-postmortem.md)
 3. [ارزیابی FarsiUI و نگاشت بلاک‌ها به صفحات](phase1-research/03-farsiui-assessment.md)
 4. [پیشنهاد تکمیل‌شده (نسخه‌ی ۲)](phase1-research/04-refined-proposal.md): یافته‌های تازه، جهت‌گیری محصول، ریسک‌ها
+5. [مدل کسب‌وکار و قیمت‌گذاری](02-business-model-and-pricing.md) و اسناد ۰۰–۰۹ و `living/` (فاز ۲)
 
 ## فاز ۲ — برنامه‌ی اجرایی (بعد از تأیید)
 بعد از تأیید فهرست ۷ سایت نوشته می‌شود و شامل این اسناد است:

@@ -10,7 +10,7 @@ model             id, vendor, name, released_at, status(active|deprecated)
 category          id, parent_id, kind(industry|task|role), names(jsonb fa/en/ar)
 tag               id, names(jsonb) ; prompt_tag(prompt_id, tag_id)
 bundle            id, locale, slug, title, price_tier ; bundle_item(bundle_id, prompt_id)
-price             id, sku, market(fa|en|ar), currency, amount, active_from — (مرجع: config/pricing.json)
+price             id, sku, market(fa|en|ar), currency, amount, active_from — (مرجع: app/config/pricing.json)
 user              id, email, phone?, locale, country
 order             id, user_id, provider, provider_ref, currency, amount, status, created_at
 order_item        order_id, sku, prompt_id?|bundle_id?

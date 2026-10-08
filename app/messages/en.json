@@ -1,0 +1,75 @@
+{
+  "brand": "Rasa Prompt",
+  "tagline": "Prompts that are tested, versioned and kept up to date",
+  "subtitle": "A professional prompt library with sample outputs, per-model test badges and free updates.",
+  "ctaLibrary": "Browse the library",
+  "ctaPricing": "Pricing",
+  "nav": {
+    "library": "Library",
+    "pricing": "Pricing"
+  },
+  "search": "Search prompts…",
+  "all": "All",
+  "results": "results",
+  "tested": "Tested on {model} · {date}",
+  "score": "Score {score}",
+  "sample": "Sample output",
+  "variables": "Variables",
+  "free": "Free",
+  "buy": "Buy",
+  "getLite": "Get the Lite version",
+  "tiers": {
+    "lite": "Lite",
+    "pro": "Pro",
+    "elite": "Elite"
+  },
+  "cat": {
+    "clinic": "Clinics",
+    "realestate": "Real estate",
+    "hr": "HR",
+    "marketing": "Marketing",
+    "code": "Code"
+  },
+  "features": {
+    "title": "Why we are different",
+    "items": [
+      {
+        "t": "Tested, not just written",
+        "d": "Every prompt is run on real models and carries a model, date and score badge."
+      },
+      {
+        "t": "Lifetime updates",
+        "d": "When a new model ships we re-test and rewrite if needed; buyers get it free."
+      },
+      {
+        "t": "Variables and forms",
+        "d": "Fill the fields and get the final prompt."
+      },
+      {
+        "t": "Three languages",
+        "d": "Persian, Arabic and English — localised, not literally translated."
+      }
+    ]
+  },
+  "pricing": {
+    "title": "Simple pricing",
+    "note": "Launch-draft prices; to be finalised before release.",
+    "monthly": "/mo",
+    "yearly": "/yr",
+    "once": "one-time",
+    "plans": {
+      "lite": "Lite",
+      "pro": "Pro prompt",
+      "plus": "Plus",
+      "lifetime": "Founder lifetime"
+    },
+    "liteDesc": "The basic version of every prompt",
+    "proDesc": "From",
+    "plusDesc": "All prompts, variables, extension",
+    "lifetimeDesc": "First {cap} members"
+  },
+  "guarantee": "Tested guarantee: if it fails on the stated model, 14-day refund.",
+  "footer": "Built with FarsiUI",
+  "prompts404": "No prompts found.",
+  "back": "Back"
+}

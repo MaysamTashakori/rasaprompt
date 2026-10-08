@@ -1,0 +1,45 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --bg: #fafaf9;
+  --fg: #1c1917;
+  --muted: #78716c;
+  --card: #ffffff;
+  --border: #e7e5e4;
+  --accent: #4f46e5;
+  --accent-fg: #ffffff;
+  --ok: #15803d;
+  --ok-bg: #dcfce7;
+}
+.dark {
+  --bg: #0c0a09;
+  --fg: #fafaf9;
+  --muted: #a8a29e;
+  --card: #1c1917;
+  --border: #292524;
+  --accent: #818cf8;
+  --accent-fg: #0c0a09;
+  --ok: #4ade80;
+  --ok-bg: #052e16;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-fg: var(--fg);
+  --color-muted: var(--muted);
+  --color-card: var(--card);
+  --color-border: var(--border);
+  --color-accent: var(--accent);
+  --color-accent-fg: var(--accent-fg);
+  --color-ok: var(--ok);
+  --color-ok-bg: var(--ok-bg);
+  --font-sans: var(--font-latin), var(--font-fa), var(--font-ar), system-ui, sans-serif;
+}
+
+html[lang="fa"] { --font-sans: var(--font-fa), system-ui, sans-serif; }
+html[lang="ar"] { --font-sans: var(--font-ar), system-ui, sans-serif; }
+
+body { background: var(--bg); color: var(--fg); font-family: var(--font-sans); }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
