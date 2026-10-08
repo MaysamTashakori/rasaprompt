@@ -12,7 +12,8 @@
 - هیچ عددی را جعل نکنید؛ هر ادعا یا ⚠️ دارد یا منبع.
 - متن UI و محتوا همیشه در سه زبان `fa` `en` `ar`؛ کلید ترجمه در `messages/`، هرگز متن ثابت در کامپوننت.
 - فقط کلاس‌های منطقی Tailwind (`ms-`, `me-`, `ps-`, `pe-`, `start-`, `end-`)، نه `ml-/mr-/left-/right-`، تا RTL/LTR کار کند.
-- قیمت‌ها فقط از `app/config/pricing.json` خوانده شوند.
+- قیمت‌ها فقط از `app/config/pricing.json` و `app/config/models.json` خوانده شوند.
+- طراحی: فقط آیکن Phosphor، بدون em-dash و ایموجی در UI سایت، یک رنگ تأکیدی (ADR-024).
 - رازها فقط در `.env` (در `.gitignore`)؛ هرگز commit نشود.
 
 ## عامل‌ها
@@ -20,7 +21,8 @@
 
 ## فرمان‌ها
 ```bash
-cd app && npm install && npm run dev      # توسعه‌ی محلی
-npm run lint && npm run typecheck && npm test
-python3 finance/model.py                  # مدل مالی
+cd app && npm install && npm run catalog && npm run dev   # توسعه‌ی محلی
+npm run lint && npm run typecheck && npm test && npm run build
+npm run bot:telegram | bot:bale | studio | localize      # ربات، استودیو، بومی‌سازی
+python3 ../finance/model_ir.py                           # مدل مالی ایران
 ```

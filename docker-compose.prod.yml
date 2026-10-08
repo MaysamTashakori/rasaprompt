@@ -1,0 +1,13 @@
+services:
+  web:
+    build: { context: ., dockerfile: app/Dockerfile }
+    env_file: app/.env
+    environment:
+      CREDITS_FILE: /data/credits.json
+      VOUCHERS_FILE: /data/vouchers.json
+      BOT_STORE_FILE: /data/bot-store.json
+    ports: ["3000:3000"]
+    volumes: [data:/data, ./content:/repo/content]
+    restart: unless-stopped
+volumes:
+  data:

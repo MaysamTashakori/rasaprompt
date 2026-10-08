@@ -34,3 +34,18 @@
 
 ## اجرای لوکال
 `docker compose up db` + `cd app && npm i && npm run dev` — بدون هیچ سرویس ابری (داده‌ی نمونه در `app/src/data/seed.ts`).
+
+## وضعیت پیاده‌سازی‌شده (نسخه‌ی 0.3)
+```
+Next.js 16 (app/)
+├─ app/[locale]/  خانه، library، p/[slug]، chat، saved، sources
+├─ app/api/       prompts، chat (پخش زنده)، credits، redeem، bot/[platform]
+├─ lib/           catalog (کاتالوگ فایل‌محور)، taxonomy، credits، vouchers، llm-stream، license-detect، icons
+├─ bots/          core (ربات)، admin (سوپرادمین)، api، dispatch، store
+├─ pipelines/     llm، test-prompt، localize، trends، ingest
+├─ studio/        قالب‌ها و کپشن اینستاگرام
+├─ scripts/       build-catalog، import-sources، localize-batch، bot-*، studio
+└─ db/            اسکیمای Drizzle + PGlite/Postgres (برای فاز حساب کاربری)
+content/          منابع، کاتالوگ، تألیفی‌ها، ترجمه‌ها، صف عامل‌ها
+```
+داده‌ی زمان اجرا (`.data/`): اعتبارها، کدهای اعتبار؛ وضعیت ربات در `BOT_STORE_FILE`. همه فایل‌محور و تک‌نمونه؛ مسیر مهاجرت به Postgres در `db/schema.ts` آماده است.
