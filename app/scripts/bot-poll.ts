@@ -8,8 +8,8 @@ import { FileStore } from "../bots/store"
 const platform = (process.argv[2] ?? "telegram") as Platform
 if (platform !== "telegram" && platform !== "bale") throw new Error("platform: telegram | bale")
 const api = new BotApi(platform, (platform === "telegram" ? process.env.TELEGRAM_BOT_TOKEN : process.env.BALE_BOT_TOKEN) ?? "")
-const store = new FileStore(process.env.BOT_STORE_FILE ?? `.bot-store-${platform}.json`)
-const ctx = { platform, store, siteUrl: process.env.SITE_URL ?? "" }
+const store = new FileStore(process.env.BOT_STORE_FILE || `.bot-store-${platform}.json`)
+const ctx = { platform, store, siteUrl: process.env.SITE_URL || "" }
 
 if (platform === "telegram") await api.call("deleteWebhook").catch(() => {}) // polling و webhook هم‌زمان ممکن نیست
 console.log(`[${platform}] polling…`)

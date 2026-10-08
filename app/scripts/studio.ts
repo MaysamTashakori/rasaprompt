@@ -12,7 +12,7 @@ import { reel, slides, writeHtml } from "../studio/templates"
 import type { CatalogItem } from "../lib/catalog-types"
 
 const arg = (k: string) => { const i = process.argv.indexOf(`--${k}`); return i > 0 ? process.argv[i + 1] : undefined }
-const site = process.env.SITE_URL ?? "rasaprompt.ir"
+const site = process.env.SITE_URL || "rasaprompt.ir"
 const bot = process.env.TELEGRAM_BOT_HANDLE
 
 function pickItems(): CatalogItem[] {

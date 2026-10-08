@@ -13,7 +13,7 @@ let bySlug: Map<string, CatalogItem> | null = null
 let searchIndex: Map<string, string> | null = null
 
 const catalogPath = () =>
-  process.env.CATALOG_PATH ?? path.join(process.cwd(), fs.existsSync(path.join(process.cwd(), "content")) ? "content" : "../content", "catalog.json")
+  process.env.CATALOG_PATH || path.join(process.cwd(), fs.existsSync(path.join(process.cwd(), "content")) ? "content" : "../content", "catalog.json")
 
 /** پاک‌کردن کش پس از بازسازی کاتالوگ (پنل مدیریت) */
 export function reloadCatalog() { cache = null; bySlug = null; searchIndex = null }

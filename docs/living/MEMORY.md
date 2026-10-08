@@ -17,3 +17,4 @@
 - 2026-10-08 — Claude: ربات تلگرام/بله + سوپرادمین (منابع با تشخیص لایسنس، عامل‌ها، صف، کد اعتبار، ارسال همگانی، استودیو).
 - 2026-10-08 — Claude: استودیوی اینستاگرام (کپشن، کاروسل ۵ اسلایدی، ریلز MP4)؛ عامل‌های Content-Studio و Instagram-Strategist.
 - 2026-10-08 — Claude: اسناد ۱۴ تا ۱۸، Dockerfile، compose تولید؛ مرجع خارجی prompts.chat (ADR-019).
+- 2026-10-08 — Claude: اسکریپت‌های استقرار (install/update/backup)، Caddy با HTTPS خودکار، سرویس‌های ربات در compose، sitemap و robots؛ اتصال مستقیم SSH از محیط ساخت مسدود بود.

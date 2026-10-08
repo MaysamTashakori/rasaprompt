@@ -8,7 +8,7 @@ interface Voucher { credits: number; createdAt: string; usedBy?: string; usedAt?
 export class VoucherStore {
   private file: string
   private data: Record<string, Voucher>
-  constructor(file = process.env.VOUCHERS_FILE ?? path.join(process.cwd(), ".data", "vouchers.json")) {
+  constructor(file = process.env.VOUCHERS_FILE || path.join(process.cwd(), ".data", "vouchers.json")) {
     this.file = file
     try { this.data = JSON.parse(fs.readFileSync(file, "utf8")) } catch { this.data = {} }
   }

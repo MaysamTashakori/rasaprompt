@@ -5,7 +5,7 @@ import { handleUpdate, MemoryStore, type Platform } from "../bots/core"
 
 const [platform = "telegram", chat] = process.argv.slice(2) as [Platform, string]
 const send = process.argv.includes("--send")
-const ctx = { platform, store: new MemoryStore(), siteUrl: process.env.SITE_URL ?? "" }
+const ctx = { platform, store: new MemoryStore(), siteUrl: process.env.SITE_URL || "" }
 const [a] = handleUpdate({ update_id: 0, message: { message_id: 0, chat: { id: 0 }, text: "/daily" } }, ctx)
 if (a.type !== "send") throw new Error("unexpected")
 if (!send || !chat) { console.log("[dry-run]\n" + a.text); process.exit(0) }

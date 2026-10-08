@@ -9,9 +9,9 @@ export class AnthropicClient implements LlmClient {
   private rateIn: number
   private rateOut: number
   constructor(
-    apiKey = process.env.ANTHROPIC_API_KEY ?? "",
-    rateIn = Number(process.env.LLM_RATE_IN ?? 0),
-    rateOut = Number(process.env.LLM_RATE_OUT ?? 0),
+    apiKey = process.env.ANTHROPIC_API_KEY || "",
+    rateIn = Number(process.env.LLM_RATE_IN || 0),
+    rateOut = Number(process.env.LLM_RATE_OUT || 0),
   ) {
     if (!apiKey) throw new Error("ANTHROPIC_API_KEY تنظیم نشده است")
     this.apiKey = apiKey
@@ -55,10 +55,10 @@ export class OpenAICompatClient implements LlmClient {
   private rateIn: number
   private rateOut: number
   constructor(
-    baseUrl = process.env.LLM_BASE_URL ?? "",
-    apiKey = process.env.LLM_API_KEY ?? "",
-    rateIn = Number(process.env.LLM_RATE_IN ?? 0),
-    rateOut = Number(process.env.LLM_RATE_OUT ?? 0),
+    baseUrl = process.env.LLM_BASE_URL || "",
+    apiKey = process.env.LLM_API_KEY || "",
+    rateIn = Number(process.env.LLM_RATE_IN || 0),
+    rateOut = Number(process.env.LLM_RATE_OUT || 0),
   ) {
     if (!baseUrl) throw new Error("LLM_BASE_URL تنظیم نشده است")
     this.baseUrl = baseUrl.replace(/\/+$/, "")

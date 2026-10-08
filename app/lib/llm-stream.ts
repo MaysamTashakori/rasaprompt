@@ -22,16 +22,16 @@ export function parseSseLines(buffer: string): { events: { delta?: string; usage
 }
 
 export async function* streamChat(model: string, messages: ChatMsg[], maxTokens: number, signal?: AbortSignal): AsyncGenerator<string, StreamResult> {
-  if ((process.env.LLM_PROVIDER ?? "mock") === "mock") {
+  if ((process.env.LLM_PROVIDER || "mock") === "mock") {
     const last = messages.filter((m) => m.role === "user").at(-1)?.content ?? ""
     const demo = `🧪 حالت نمایشی (LLM_PROVIDER=mock): هنوز به مدل واقعی وصل نیستم.\n\nپرامپت شما ${last.length} نویسه داشت. برای پاسخ واقعی، در فایل .env مقدارهای LLM_PROVIDER=openai-compat و LLM_BASE_URL و LLM_API_KEY و شناسه‌ی مدل هر رده را تنظیم کنید.\n\nنمونه‌ی خروجی:\n- نکته‌ی اول\n- نکته‌ی دوم\n\n\`\`\`\nconsole.log("سلام")\n\`\`\``
     for (const w of demo.split(/(\s+)/)) { if (signal?.aborted) break; yield w; await new Promise((r) => setTimeout(r, 12)) }
     return { usageTokens: null }
   }
-  const base = (process.env.LLM_BASE_URL ?? "").replace(/\/+$/, "")
+  const base = (process.env.LLM_BASE_URL || "").replace(/\/+$/, "")
   const res = await fetch(`${base}/chat/completions`, {
     method: "POST", signal,
-    headers: { "content-type": "application/json", authorization: `Bearer ${process.env.LLM_API_KEY ?? ""}` },
+    headers: { "content-type": "application/json", authorization: `Bearer ${process.env.LLM_API_KEY || ""}` },
     body: JSON.stringify({ model, messages, max_tokens: maxTokens, stream: true, stream_options: { include_usage: true } }),
   })
   if (!res.ok || !res.body) throw new Error(`LLM ${res.status}`)

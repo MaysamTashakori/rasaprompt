@@ -20,7 +20,7 @@ async function getPglite(migrationsFolder = path.join(process.cwd(), "db/migrati
   const { vector } = await import("@electric-sql/pglite-pgvector")
   const { drizzle } = await import("drizzle-orm/pglite")
   const { migrate } = await import("drizzle-orm/pglite/migrator")
-  const client = new PGlite(process.env.PGLITE_DIR ?? "memory://", { extensions: { vector } })
+  const client = new PGlite(process.env.PGLITE_DIR || "memory://", { extensions: { vector } })
   const db = drizzle(client, { schema })
   await migrate(db, { migrationsFolder })
   return db

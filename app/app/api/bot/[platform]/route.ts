@@ -6,7 +6,7 @@ import { dispatch } from "@/bots/dispatch"
 import { BotApi } from "@/bots/api"
 import { FileStore } from "@/bots/store"
 
-const store = new FileStore(process.env.BOT_STORE_FILE ?? "/tmp/rasa-bot-store.json")
+const store = new FileStore(process.env.BOT_STORE_FILE || "/tmp/rasa-bot-store.json")
 const apis: Partial<Record<Platform, BotApi>> = {}
 
 export async function POST(req: Request, { params }: { params: Promise<{ platform: string }> }) {
@@ -19,6 +19,6 @@ export async function POST(req: Request, { params }: { params: Promise<{ platfor
   if (!token) return NextResponse.json({ ok: false, error: "no token" }, { status: 503 })
   apis[platform] ??= new BotApi(platform, token)
   const update = (await req.json()) as Update
-  await dispatch(apis[platform]!, update, { platform, store, siteUrl: process.env.SITE_URL ?? "" })
+  await dispatch(apis[platform]!, update, { platform, store, siteUrl: process.env.SITE_URL || "" })
   return NextResponse.json({ ok: true })
 }

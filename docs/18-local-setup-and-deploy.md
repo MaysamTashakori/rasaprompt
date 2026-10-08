@@ -24,14 +24,8 @@ npm run dev                   # http://localhost:3000/fa
 | مدل مالی | `python3 ../finance/model_ir.py` |
 | همگام‌سازی FarsiUI | `npx farsiui@latest init` سپس `npx farsiui@latest add <block>` |
 
-## استقرار (VPS ایرانی با Docker، ADR-016)
-```bash
-cp app/.env.example app/.env   # مقداردهی تولید
-docker compose -f docker-compose.prod.yml up -d --build
-```
-- `.data/` (اعتبارها، کدها، وضعیت ربات) و `content/` روی volume هستند؛ روزانه پشتیبان بگیرید.
-- HTTPS با Caddy یا Nginx جلوی پورت ۳۰۰۰؛ سپس وب‌هوک ربات‌ها را ثبت کنید.
-- هیچ سرویس خارجی در زمان اجرا لازم نیست جز سرویس مدل زبانی‌ای که خودتان انتخاب می‌کنید.
+## استقرار روی سرور
+راهنمای گام‌به‌گام: [`deploy/README.md`](../deploy/README.md). خلاصه: زیپ را به `/root` سرور بفرستید و `deploy/install.sh` را اجرا کنید؛ Docker، دیوار آتش، Caddy (HTTPS خودکار با دامنه) و سرویس‌ها خودکار راه می‌افتند. ربات‌ها با `BOTS="telegram bale"`.
 
 ## ساختار مخزن
 ```

@@ -1,13 +1,50 @@
+# استقرار تولید: وب + HTTPS خودکار (Caddy) + ربات‌ها (اختیاری با profile)
+x-app: &app
+  build: { context: ., dockerfile: app/Dockerfile }
+  image: rasaprompt:latest
+  env_file: app/.env
+  environment:
+    CREDITS_FILE: /data/credits.json
+    VOUCHERS_FILE: /data/vouchers.json
+  volumes: [data:/data, ./content:/repo/content, ./agents:/repo/agents, ./out:/repo/out]
+  restart: unless-stopped
+
 services:
   web:
-    build: { context: ., dockerfile: app/Dockerfile }
-    env_file: app/.env
+    <<: *app
     environment:
       CREDITS_FILE: /data/credits.json
       VOUCHERS_FILE: /data/vouchers.json
-      BOT_STORE_FILE: /data/bot-store.json
-    ports: ["3000:3000"]
-    volumes: [data:/data, ./content:/repo/content]
+      BOT_STORE_FILE: /data/bot-store-web.json
+
+  caddy:
+    image: caddy:2
     restart: unless-stopped
+    ports: ["80:80", "443:443"]
+    environment:
+      SITE_ADDRESS: ${SITE_ADDRESS:-:80}
+    volumes: [./deploy/Caddyfile:/etc/caddy/Caddyfile:ro, caddy_data:/data, caddy_config:/config]
+    depends_on: [web]
+
+  bot-telegram:
+    <<: *app
+    profiles: [telegram]
+    command: ["npx", "tsx", "scripts/bot-poll.ts", "telegram"]
+    environment:
+      CREDITS_FILE: /data/credits.json
+      VOUCHERS_FILE: /data/vouchers.json
+      BOT_STORE_FILE: /data/bot-store-telegram.json
+
+  bot-bale:
+    <<: *app
+    profiles: [bale]
+    command: ["npx", "tsx", "scripts/bot-poll.ts", "bale"]
+    environment:
+      CREDITS_FILE: /data/credits.json
+      VOUCHERS_FILE: /data/vouchers.json
+      BOT_STORE_FILE: /data/bot-store-bale.json
+
 volumes:
   data:
+  caddy_data:
+  caddy_config:

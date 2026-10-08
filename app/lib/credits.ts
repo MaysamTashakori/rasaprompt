@@ -25,7 +25,7 @@ const day = (d = new Date()) => d.toISOString().slice(0, 10)
 export class FileCreditStore implements CreditStore {
   private file: string
   private data: Record<string, Account>
-  constructor(file = process.env.CREDITS_FILE ?? path.join(process.cwd(), ".data", "credits.json")) {
+  constructor(file = process.env.CREDITS_FILE || path.join(process.cwd(), ".data", "credits.json")) {
     this.file = file
     try { this.data = JSON.parse(fs.readFileSync(file, "utf8")) } catch { this.data = {} }
   }

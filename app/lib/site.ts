@@ -1,8 +1,8 @@
 import type { Locale } from "@/i18n/routing"
 
 export const BOT_LINKS = {
-  telegram: process.env.NEXT_PUBLIC_TELEGRAM_BOT_URL ?? "",
-  bale: process.env.NEXT_PUBLIC_BALE_BOT_URL ?? "",
+  telegram: process.env.NEXT_PUBLIC_TELEGRAM_BOT_URL || "",
+  bale: process.env.NEXT_PUBLIC_BALE_BOT_URL || "",
 }
 
 export const POPULAR_SEARCHES: Record<Locale, string[]> = {

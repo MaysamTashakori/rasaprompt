@@ -2,8 +2,8 @@
 import type { Action, Platform, Update } from "./core.ts"
 
 export const API_BASE: Record<Platform, string> = {
-  telegram: process.env.TELEGRAM_API_BASE ?? "https://api.telegram.org",
-  bale: process.env.BALE_API_BASE ?? "https://tapi.bale.ai",
+  telegram: process.env.TELEGRAM_API_BASE || "https://api.telegram.org",
+  bale: process.env.BALE_API_BASE || "https://tapi.bale.ai",
 }
 
 export class BotApi {
