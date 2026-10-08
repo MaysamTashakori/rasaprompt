@@ -33,7 +33,7 @@
 رازها در env؛ کلید BYOK هرگز در لاگ؛ webhook پرداخت با امضا؛ نرخ‌محدودسازی؛ تحویل فایل با لینک امضاشده؛ CSP؛ پشتیبان روزانه DB.
 
 ## اجرای لوکال
-`docker compose up db` + `cd app && npm i && npm run dev` — بدون هیچ سرویس ابری (داده‌ی نمونه در `app/src/data/seed.ts`).
+`cd app && npm i && npm run catalog && npm run dev`؛ بدون هیچ سرویس ابری (کاتالوگ از `content/`). جزئیات: docs/18.
 
 ## وضعیت پیاده‌سازی‌شده (نسخه‌ی 0.3)
 ```
