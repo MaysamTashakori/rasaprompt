@@ -50,11 +50,16 @@ export const LEVEL_NAMES: Record<Level, Record<Locale, string>> = {
   pro: { fa: "حرفه‌ای", en: "Pro", ar: "محترف" },
 }
 
-const sc = (text: string, kws: string[]) => kws.reduce((n, k) => n + (text.includes(k) ? 1 : 0), 0)
+// تطابق از ابتدای کلمه (مثلاً "ui" با "guide" تطابق ندارد ولی "write" با "writer" دارد)
+const re = new Map<string, RegExp>()
+const rx = (k: string) => re.get(k) ?? (re.set(k, new RegExp(`(^|[^a-z])${k.trim().replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}${k.trim().length <= 4 ? "($|[^a-z])" : ""}`)), re.get(k)!)
+const sc = (text: string, kws: string[]) => kws.reduce((n, k) => n + (rx(k).test(text) ? 1 : 0), 0)
 
 /** حوزه با بیشترین تطابق (عنوان وزن ۳×)؛ بدون تطابق → productivity. */
 export function classifyField(title: string, body: string, tags: string[] = []): string {
   const t = title.toLowerCase(), b = body.slice(0, 600).toLowerCase(), g = tags.join(" ").toLowerCase()
+  // پرامپت‌های «ساخت اپ/وب» (vibe coding) صرف‌نظر از موضوع، کدنویسی‌اند
+  if (/\bhtml\b/.test(b) && /\b(css|javascript|js|react|tailwind)\b/.test(b)) return "coding"
   let best = "productivity", top = 0
   for (const f of FIELDS) {
     // حوزه‌های عام (نوشتن/بهره‌وری) وزن کمتر دارند تا حوزه‌ی تخصصی برنده شود

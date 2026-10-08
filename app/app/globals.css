@@ -3,26 +3,34 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 :root {
-  --bg: #fafaf9;
-  --fg: #1c1917;
-  --muted: #78716c;
+  --bg: #fbfbfa;
+  --fg: #18181b;
+  --muted: #71717a;
   --card: #ffffff;
-  --border: #e7e5e4;
+  --subtle: #f4f4f5;
+  --border: #e4e4e7;
   --accent: #4f46e5;
+  --accent-2: #0ea5e9;
   --accent-fg: #ffffff;
   --ok: #15803d;
   --ok-bg: #dcfce7;
+  --warn: #a16207;
+  --warn-bg: #fef9c3;
 }
 .dark {
-  --bg: #0c0a09;
-  --fg: #fafaf9;
-  --muted: #a8a29e;
-  --card: #1c1917;
-  --border: #292524;
+  --bg: #0a0a0b;
+  --fg: #fafafa;
+  --muted: #a1a1aa;
+  --card: #141416;
+  --subtle: #1c1c1f;
+  --border: #27272a;
   --accent: #818cf8;
-  --accent-fg: #0c0a09;
+  --accent-2: #38bdf8;
+  --accent-fg: #0a0a0b;
   --ok: #4ade80;
   --ok-bg: #052e16;
+  --warn: #facc15;
+  --warn-bg: #2a2205;
 }
 
 @theme inline {
@@ -30,16 +38,39 @@
   --color-fg: var(--fg);
   --color-muted: var(--muted);
   --color-card: var(--card);
+  --color-subtle: var(--subtle);
   --color-border: var(--border);
   --color-accent: var(--accent);
+  --color-accent-2: var(--accent-2);
   --color-accent-fg: var(--accent-fg);
   --color-ok: var(--ok);
   --color-ok-bg: var(--ok-bg);
+  --color-warn: var(--warn);
+  --color-warn-bg: var(--warn-bg);
   --font-sans: var(--font-latin), var(--font-fa), var(--font-ar), system-ui, sans-serif;
 }
 
-html[lang="fa"] { --font-sans: var(--font-fa), system-ui, sans-serif; }
-html[lang="ar"] { --font-sans: var(--font-ar), system-ui, sans-serif; }
+html[lang="fa"] { --font-sans: var(--font-fa), var(--font-latin), system-ui, sans-serif; }
+html[lang="ar"] { --font-sans: var(--font-ar), var(--font-latin), system-ui, sans-serif; }
 
 body { background: var(--bg); color: var(--fg); font-family: var(--font-sans); }
+::selection { background: color-mix(in oklab, var(--accent) 25%, transparent); }
+
+.text-gradient {
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.hero-glow {
+  background:
+    radial-gradient(60% 50% at 50% 0%, color-mix(in oklab, var(--accent) 18%, transparent), transparent 70%),
+    radial-gradient(40% 40% at 85% 20%, color-mix(in oklab, var(--accent-2) 14%, transparent), transparent 70%);
+}
+@utility card { @apply rounded-2xl border border-border bg-card transition; }
+@utility card-hover { @apply hover:-translate-y-0.5 hover:border-accent/60 hover:shadow-lg; }
+@utility chip { @apply inline-flex items-center gap-1 rounded-full border border-border px-3 py-1 text-sm text-muted transition hover:border-accent hover:text-fg; }
+@utility chip-on { @apply border-accent bg-accent text-accent-fg hover:text-accent-fg; }
+@utility btn { @apply inline-flex items-center justify-center gap-2 rounded-xl px-4 py-2.5 text-sm font-medium transition; }
+@utility btn-primary { @apply inline-flex items-center justify-center gap-2 rounded-xl px-4 py-2.5 text-sm font-medium transition bg-accent text-accent-fg hover:opacity-90; }
+@utility btn-ghost { @apply inline-flex items-center justify-center gap-2 rounded-xl px-4 py-2.5 text-sm font-medium transition border border-border hover:border-accent; }
+
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }

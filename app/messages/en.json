@@ -1,85 +1,125 @@
 {
-  "brand": "Rasa Prompt",
-  "tagline": "Prompts that are tested, versioned and kept up to date",
-  "subtitle": "A professional prompt library with sample outputs, per-model test badges and free updates.",
-  "ctaLibrary": "Browse the library",
-  "ctaPricing": "Pricing",
-  "nav": {
-    "library": "Library",
-    "pricing": "Pricing"
-  },
-  "search": "Search prompts…",
-  "all": "All",
-  "results": "results",
-  "tested": "Tested on {model} · {date}",
-  "score": "Score {score}",
-  "sample": "Sample output",
-  "variables": "Variables",
-  "free": "Free",
-  "buy": "Buy",
-  "getLite": "Get the Lite version",
-  "tiers": {
-    "lite": "Lite",
-    "pro": "Pro",
-    "elite": "Elite"
-  },
-  "cat": {
-    "clinic": "Clinics",
-    "realestate": "Real estate",
-    "hr": "HR",
-    "marketing": "Marketing",
-    "code": "Code"
-  },
-  "features": {
-    "title": "Why we are different",
-    "items": [
-      {
-        "t": "Tested, not just written",
-        "d": "Every prompt is run on real models and carries a model, date and score badge."
-      },
-      {
-        "t": "Lifetime updates",
-        "d": "When a new model ships we re-test and rewrite if needed; buyers get it free."
-      },
-      {
-        "t": "Variables and forms",
-        "d": "Fill the fields and get the final prompt."
-      },
-      {
-        "t": "Three languages",
-        "d": "Persian, Arabic and English — localised, not literally translated."
-      }
-    ]
-  },
-  "pricing": {
-    "title": "Simple pricing",
-    "note": "Launch-draft prices; to be finalised before release.",
-    "monthly": "/mo",
-    "yearly": "/yr",
-    "once": "one-time",
-    "plans": {
-      "lite": "Lite",
-      "pro": "Pro prompt",
-      "plus": "Plus",
-      "lifetime": "Founder lifetime"
-    },
-    "liteDesc": "The basic version of every prompt",
-    "proDesc": "From",
-    "plusDesc": "All prompts, variables, extension",
-    "lifetimeDesc": "First {cap} members"
-  },
-  "guarantee": "Tested guarantee: if it fails on the stated model, 14-day refund.",
-  "footer": "Built with FarsiUI",
-  "prompts404": "No prompts found.",
-  "back": "Back",
-  "sampleBadge": "Sample · not yet tested",
-  "copy": "Copy",
+ "brand": "Rasa Prompt",
+ "tagline": "The right prompt for every task",
+ "subtitle": "A curated prompt library for everyday users, coders and professionals — transparent sources, precise categories, and Telegram & Bale bots.",
+ "nav": {
+  "library": "Library",
+  "pricing": "Pricing",
+  "bots": "Bots",
+  "saved": "Saved",
+  "sources": "Sources"
+ },
+ "search": "Search prompts…",
+ "searchBtn": "Search",
+ "popular": "Popular searches:",
+ "stat": {
+  "prompts": "prompts",
+  "fields": "fields",
+  "langs": "languages"
+ },
+ "aud": {
+  "title": "For everyone, at every level",
+  "users": "Everyday users",
+  "usersD": "Writing, translation, learning and daily tasks — simple and fast.",
+  "coders": "Coders",
+  "codersD": "Code review, architecture, building apps with Claude Code and Cursor.",
+  "pros": "Professionals",
+  "prosD": "Marketing, sales, legal, finance and management — structured and precise.",
+  "skills": "Skills & agents",
+  "skillsD": "System prompts and Skills for AI agents."
+ },
+ "trending": "Trending",
+ "trendingNote": "Ranked by the original source's popularity data",
+ "originals": "Rasa originals",
+ "originalsNote": "Prompts we wrote ourselves for real business tasks",
+ "fieldsTitle": "Fields",
+ "viewAll": "View all",
+ "bots": {
+  "title": "Prompts in Telegram and Bale",
+  "desc": "Search, prompt of the day and trending prompts right inside your messenger.",
+  "telegram": "Telegram bot",
+  "bale": "Bale bot",
+  "soon": "Coming soon"
+ },
+ "faq": {
+  "title": "FAQ",
+  "items": [
+   {
+    "q": "Where do the prompts come from?",
+    "a": "Some are our own originals; others come from openly licensed sources (CC0, MIT), with source and license shown on every prompt."
+   },
+   {
+    "q": "Which AI do they work with?",
+    "a": "They are model-agnostic: copy them into the tool you use."
+   },
+   {
+    "q": "What are variables?",
+    "a": "Fill parts like {{topic}} on the prompt page to get a ready-to-copy final prompt."
+   },
+   {
+    "q": "Are prompts tested?",
+    "a": "Not yet. Automated testing is being built, and we never show a “tested” badge until a test has actually run."
+   }
+  ]
+ },
+ "lib": {
+  "title": "Library",
+  "field": "Field",
+  "kind": "Type",
+  "level": "Level",
+  "sort": "Sort",
+  "sortFeatured": "Featured",
+  "sortTrending": "Trending",
+  "sortAz": "A–Z",
+  "clear": "Clear filters",
+  "onlyFa": "Persian title only"
+ },
+ "all": "All",
+ "results": "results",
+ "empty": "No prompts match these filters.",
+ "prev": "Previous",
+ "next": "Next",
+ "page": "Page",
+ "p": {
+  "copy": "Copy prompt",
   "copied": "Copied",
-  "archive": "Open-source archive",
-  "archiveNote": "Raw prompts from openly licensed sources, with attribution. Translation and testing are queued; not indexed by search engines until enriched.",
+  "fill": "Fill in the variables",
+  "final": "Final prompt",
+  "openIn": "Open in",
   "source": "Source",
   "license": "License",
-  "prev": "Previous",
-  "next": "Next",
-  "page": "Page"
+  "original": "Rasa original",
+  "related": "Related prompts",
+  "save": "Save",
+  "saved": "Saved",
+  "share": "Share",
+  "untested": "Not tested yet",
+  "enOnly": "This prompt's text is only available in another language for now; a translation is queued.",
+  "careful": "Not a substitute for professional (medical, legal or financial) advice.",
+  "popularity": "Popularity"
+ },
+ "savedTitle": "My saved prompts",
+ "savedEmpty": "Nothing saved yet. Tap “Save” on any prompt page.",
+ "sourcesTitle": "Sources & licenses",
+ "sourcesIntro": "Full transparency about where content comes from. Open-source records are shown with attribution and license.",
+ "pricing": {
+  "title": "Pricing",
+  "note": "Draft prices; finalised before payments launch.",
+  "monthly": "/mo",
+  "yearly": "/yr",
+  "once": "one-time",
+  "plans": {
+   "lite": "Free",
+   "pro": "Pro prompt",
+   "plus": "Plus",
+   "lifetime": "Founder lifetime"
+  },
+  "liteDesc": "The full open library, bots and saving",
+  "proDesc": "From",
+  "plusDesc": "All pro packs, no ads",
+  "lifetimeDesc": "First {cap} members"
+ },
+ "guarantee": "7-day money-back guarantee on paid products.",
+ "footer": "Built with Next.js and FarsiUI",
+ "footerNote": "Open-source content belongs to its authors under the stated licenses."
 }

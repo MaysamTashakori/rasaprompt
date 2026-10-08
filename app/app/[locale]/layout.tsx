@@ -46,8 +46,17 @@ export default async function LocaleLayout({
         <ThemeProvider>
           <NextIntlClientProvider>
             <Header locale={locale} />
-            <main className="mx-auto w-full max-w-6xl px-4 py-10">{children}</main>
-            <footer className="border-t border-border py-8 text-center text-sm text-muted">{t("footer")}</footer>
+            <main className="mx-auto w-full max-w-6xl px-4 py-8 sm:py-12">{children}</main>
+            <footer className="mt-16 border-t border-border">
+              <div className="mx-auto flex max-w-6xl flex-col gap-3 px-4 py-8 text-sm text-muted sm:flex-row sm:items-center">
+                <span className="font-semibold text-fg">{t("brand")}</span>
+                <span>{t("footerNote")}</span>
+                <span className="sm:ms-auto flex gap-4">
+                  <a href={`/${locale}/sources`} className="hover:text-fg">{t("nav.sources")}</a>
+                  <span>{t("footer")}</span>
+                </span>
+              </div>
+            </footer>
           </NextIntlClientProvider>
         </ThemeProvider>
       </body>

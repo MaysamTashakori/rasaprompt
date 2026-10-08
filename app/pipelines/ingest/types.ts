@@ -10,4 +10,6 @@ export interface SourcedPrompt {
   description?: string       // توضیح منبع (در صورت وجود)
   tags: string[]
   contributor?: string
+  popularity?: number        // سیگنال محبوبیت واقعی منبع (مثلاً weight در ChatGPT-Shortcut)
+  sameAs?: string            // لینک به رکورد معادل در منبع دیگر
 }

@@ -4,7 +4,7 @@ import type { LlmClient } from "./llm"
 import { ruleChecks, type Locale } from "./test-prompt.ts"
 
 export interface LocalizeInput { title: string; body: string; target: Exclude<Locale, "en">; glossary?: Record<string, string> }
-export interface LocalizeResult { title: string; body: string; warnings: string[] }
+export interface LocalizeResult { title: string; body: string; warnings: string[]; costUsd: number }
 
 const PLACEHOLDER = /\{\{\s*\w+\s*\}\}|\[[^\]\n]{1,40}\]/g
 
@@ -32,7 +32,7 @@ export function parseLocalized(raw: string): { title: string; body: string } | n
 }
 
 export async function localizePrompt(llm: LlmClient, model: string, input: LocalizeInput): Promise<LocalizeResult> {
-  const { text } = await llm.complete({ model, prompt: buildLocalizePrompt(input), maxTokens: 2000 })
+  const { text, costUsd } = await llm.complete({ model, prompt: buildLocalizePrompt(input), maxTokens: 2000 })
   const out = parseLocalized(text)
   if (!out) throw new Error("خروجی بومی‌سازی قابل‌تجزیه نبود")
   const warnings: string[] = []
@@ -41,5 +41,5 @@ export async function localizePrompt(llm: LlmClient, model: string, input: Local
   if (a.join("|") !== b.join("|")) warnings.push("متغیرها/جایگزین‌ها حفظ نشده‌اند")
   // ruleChecks برای خروجی مدل است؛ اینجا جایگزین باقی‌مانده در بدنه‌ی پرامپت طبیعی است
   warnings.push(...ruleChecks(out.body, input.target).failures.filter((f) => !f.includes("جایگزین‌نشده")))
-  return { ...out, warnings }
+  return { ...out, warnings, costUsd }
 }

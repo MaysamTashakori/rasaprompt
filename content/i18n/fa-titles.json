@@ -1,0 +1,554 @@
+{
+ "shortcut-en:2": {
+  "title": "دستیار بهبود نوشتار",
+  "description": "املا، دستور زبان و روانی متن را اصلاح می‌کند."
+ },
+ "shortcut-en:209": {
+  "title": "نوشتن با ایموجی",
+  "description": "متن را با ایموجی‌های مناسب جذاب‌تر می‌کند."
+ },
+ "promptschat:114:midjourney-prompt-generator": {
+  "title": "سازنده‌ی پرامپت میدجرنی",
+  "description": "ایده‌ی ساده را به پرامپت تصویری دقیق و خلاقانه تبدیل می‌کند."
+ },
+ "shortcut-en:197": {
+  "title": "ویرایش طبیعی متن",
+  "description": "غلط‌گیری و بازنویسی روان و طبیعی."
+ },
+ "promptschat:72:academician": {
+  "title": "پژوهشگر دانشگاهی",
+  "description": "مقاله‌ی پژوهشی مستند و ساختارمند درباره‌ی موضوع شما."
+ },
+ "promptschat:3:english-translator-and-improver": {
+  "title": "مترجم و بهبوددهنده‌ی انگلیسی",
+  "description": "هر زبانی را به انگلیسی ادبی و دقیق برمی‌گرداند."
+ },
+ "promptschat:122:stackoverflow-post": {
+  "title": "پاسخ به سبک استک‌اورفلو",
+  "description": "جواب فنی کوتاه و دقیق به سؤال برنامه‌نویسی."
+ },
+ "shortcut-en:204": {
+  "title": "متن گفتاری طبیعی",
+  "description": "مقاله‌ای با لحن انسانی و ساده."
+ },
+ "shortcut-en:11": {
+  "title": "خلاصه‌ساز",
+  "description": "متن را در ۱۰۰ کلمه‌ی خوانا خلاصه می‌کند."
+ },
+ "shortcut-en:196": {
+  "title": "اتاق فکر",
+  "description": "شش مشاور خیالی مسئله‌ی شما را از زاویه‌های مختلف بررسی می‌کنند."
+ },
+ "shortcut-en:206": {
+  "title": "دستیار تفکر عمیق",
+  "description": "با پرسش‌های لایه‌لایه تفکر نقادانه را تمرین می‌دهد."
+ },
+ "promptschat:21:novelist": {
+  "title": "رمان‌نویس",
+  "description": "داستان خلاقانه و پرکشش در ژانر دلخواه."
+ },
+ "shortcut-en:9": {
+  "title": "ادامه‌ی مقاله",
+  "description": "مقاله‌ی نیمه‌کاره را با همان لحن ادامه می‌دهد."
+ },
+ "promptschat:146:title-generator-for-written-pieces": {
+  "title": "تیترساز",
+  "description": "چند تیتر جذاب برای نوشته‌ی شما."
+ },
+ "shortcut-en:173": {
+  "title": "توضیح‌دهنده‌ی کد",
+  "description": "نحو و منطق کد را خط‌به‌خط توضیح می‌دهد."
+ },
+ "shortcut-en:219": {
+  "title": "بازی ماجرایی متنی پیشرفته",
+  "description": "بازی متنی تعاملی با روایت پویا."
+ },
+ "promptschat:40:personal-trainer": {
+  "title": "مربی بدنسازی",
+  "description": "برنامه‌ی تمرین و تغذیه متناسب با هدف شما."
+ },
+ "promptschat:46:ai-assisted-doctor": {
+  "title": "دستیار پزشکی",
+  "description": "تحلیل علائم با هشدار: جایگزین پزشک نیست."
+ },
+ "promptschat:64:prompt-generator": {
+  "title": "پرامپت‌ساز حرفه‌ای",
+  "description": "با پرسش‌وپاسخ، بهترین پرامپت را برای هدف شما می‌سازد."
+ },
+ "shortcut-en:210": {
+  "title": "گزارش هفتگی",
+  "description": "از یادداشت‌های پراکنده گزارش هفتگی منظم می‌سازد."
+ },
+ "shortcut-en:214": {
+  "title": "گزارش پژوهشی",
+  "description": "گزارش تحقیقاتی ساختارمند با منبع."
+ },
+ "promptschat:53:investment-manager": {
+  "title": "مشاور سرمایه‌گذاری",
+  "description": "تحلیل گزینه‌های سرمایه‌گذاری؛ توصیه‌ی مالی قطعی نیست."
+ },
+ "shortcut-en:187": {
+  "title": "سرفصل پاورپوینت",
+  "description": "ساختار کامل اسلایدها برای ارائه."
+ },
+ "shortcut-en:220": {
+  "title": "برنامه‌ی سفر",
+  "description": "برنامه‌ی سفر روزبه‌روز برای مقصد شما."
+ },
+ "promptschat:13:storyteller": {
+  "title": "قصه‌گو",
+  "description": "داستان سرگرم‌کننده برای هر سن و مخاطب."
+ },
+ "promptschat:115:fullstack-software-developer": {
+  "title": "توسعه‌دهنده‌ی فول‌استک",
+  "description": "معماری و کد اپ وب از روی نیازمندی‌ها."
+ },
+ "shortcut-en:266": {
+  "title": "پرامپت میدجرنی (نسخه‌ی ۲)",
+  "description": "پرامپت تصویری دقیق‌تر با سبک و نورپردازی."
+ },
+ "shortcut-en:277": {
+  "title": "بازنویسی مقاله",
+  "description": "بازنویسی خلاقانه با حفظ پیام اصلی."
+ },
+ "promptschat:84:essay-writer": {
+  "title": "انشانویس",
+  "description": "انشای مستدل و ساختارمند."
+ },
+ "shortcut-en:242": {
+  "title": "پیشنهاد نام فرزند",
+  "description": "نام‌های معنادار با توضیح ریشه."
+ },
+ "promptschat:15:stand-up-comedian": {
+  "title": "استندآپ کمدین",
+  "description": "اجرای طنز درباره‌ی موضوع روز."
+ },
+ "promptschat:30:ai-writing-tutor": {
+  "title": "مربی نویسندگی",
+  "description": "بازخورد دقیق برای بهتر نوشتن."
+ },
+ "promptschat:52:financial-analyst": {
+  "title": "تحلیلگر مالی",
+  "description": "تحلیل صورت‌های مالی و نمودارها."
+ },
+ "promptschat:73:it-architect": {
+  "title": "معمار فناوری اطلاعات",
+  "description": "طراحی یکپارچه‌سازی سیستم‌ها."
+ },
+ "promptschat:94:journalist": {
+  "title": "روزنامه‌نگار",
+  "description": "گزارش خبری دقیق و بی‌طرف."
+ },
+ "promptschat:107:legal-advisor": {
+  "title": "مشاور حقوقی",
+  "description": "راهنمای اولیه؛ جایگزین وکیل نیست."
+ },
+ "promptschat:132:senior-frontend-developer": {
+  "title": "توسعه‌دهنده‌ی ارشد فرانت‌اند",
+  "description": "کد فرانت‌اند تمیز با React و ابزارهای مدرن."
+ },
+ "promptschat:161:chatgpt-prompt-generator": {
+  "title": "سازنده‌ی پرامپت ChatGPT",
+  "description": "موضوع بدهید، پرامپت کامل بگیرید."
+ },
+ "promptschat:449:act-as-a-product-manager": {
+  "title": "مدیر محصول",
+  "description": "سند نیازمندی محصول (PRD) و اولویت‌بندی."
+ },
+ "shortcut-en:200": {
+  "title": "انشای روایی دانش‌آموزی",
+  "description": "انشای ۸۰۰ کلمه‌ای با ساختار کامل."
+ },
+ "shortcut-en:205": {
+  "title": "خلاصه‌ی هسته‌ای",
+  "description": "توضیح پیچیده را ساده و کوتاه می‌کند."
+ },
+ "promptschat:6:excel-sheet": {
+  "title": "اکسل متنی",
+  "description": "شبیه‌ساز صفحه‌گسترده با فرمول."
+ },
+ "promptschat:18:debater": {
+  "title": "مناظره‌گر",
+  "description": "استدلال موافق و مخالف درباره‌ی یک موضوع."
+ },
+ "promptschat:20:screenwriter": {
+  "title": "فیلمنامه‌نویس",
+  "description": "فیلمنامه با شخصیت‌پردازی و دیالوگ."
+ },
+ "promptschat:119:dream-interpreter": {
+  "title": "تعبیر خواب",
+  "description": "تعبیر نمادین خواب (سرگرمی)."
+ },
+ "promptschat:136:startup-idea-generator": {
+  "title": "ایده‌ساز استارتاپ",
+  "description": "ایده‌ی استارتاپ با مدل کسب‌وکار و بوم."
+ },
+ "shortcut-en:190": {
+  "title": "سازنده‌ی پیام سیستمی",
+  "description": "پیام سیستمی دقیق برای عامل‌های هوش مصنوعی."
+ },
+ "shortcut-en:191": {
+  "title": "متخصص SQL",
+  "description": "طراحی و بهینه‌سازی کوئری و پایگاه‌داده."
+ },
+ "promptschat:12:advertiser": {
+  "title": "تبلیغ‌نویس",
+  "description": "کمپین تبلیغاتی با مخاطب، پیام و کانال."
+ },
+ "promptschat:45:web-design-consultant": {
+  "title": "مشاور طراحی وب",
+  "description": "پیشنهاد UI/UX و فناوری برای سایت شما."
+ },
+ "shortcut-en:176": {
+  "title": "سؤال‌ساز",
+  "description": "پرسش‌های عمیق از دل یک متن."
+ },
+ "shortcut-en:253": {
+  "title": "بهینه‌سازی رزومه",
+  "description": "رزومه را با آگهی شغلی هم‌راستا می‌کند."
+ },
+ "shortcut-en:267": {
+  "title": "کاهش شباهت متن",
+  "description": "بازنویسی برای اصالت بیشتر (با رعایت اخلاق پژوهش)."
+ },
+ "promptschat:8:spoken-english-teacher-and-improver": {
+  "title": "معلم مکالمه‌ی انگلیسی",
+  "description": "تمرین مکالمه با تصحیح لحظه‌ای."
+ },
+ "promptschat:24:poet": {
+  "title": "شاعر",
+  "description": "شعر احساسی درباره‌ی هر موضوع."
+ },
+ "promptschat:82:educational-content-creator": {
+  "title": "تولیدکننده‌ی محتوای آموزشی",
+  "description": "درس‌نامه و تمرین برای هر موضوع."
+ },
+ "shortcut-en:3": {
+  "title": "ویرایش متن صوتی",
+  "description": "متن تایپ‌شده با صدا را مرتب و خوانا می‌کند."
+ },
+ "shortcut-en:182": {
+  "title": "معلم ساختار چهارلایه",
+  "description": "یادگیری مفهوم در چهار سطح عمق."
+ },
+ "shortcut-en:264": {
+  "title": "بازی شبیه‌سازی زندگی",
+  "description": "بازی متنی با شخصیت و رویداد."
+ },
+ "promptschat:22:movie-critic": {
+  "title": "منتقد فیلم",
+  "description": "نقد فیلم با تحلیل روایت و کارگردانی."
+ },
+ "promptschat:29:math-teacher": {
+  "title": "معلم ریاضی",
+  "description": "حل گام‌به‌گام و توضیح مفهومی."
+ },
+ "promptschat:41:mental-health-adviser": {
+  "title": "مشاور سلامت روان",
+  "description": "راهکارهای کلی؛ جایگزین درمانگر نیست."
+ },
+ "promptschat:60:text-based-adventure-game": {
+  "title": "بازی ماجرایی متنی",
+  "description": "بازی کلاسیک فرمان‌محور."
+ },
+ "shortcut-en:145": {
+  "title": "مصاحبه‌گر شغلی",
+  "description": "شبیه‌سازی مصاحبه‌ی استخدامی برای تمرین."
+ },
+ "shortcut-en:188": {
+  "title": "مربی روش فاینمن",
+  "description": "یادگیری با توضیح ساده و رفع ابهام."
+ },
+ "shortcut-en:195": {
+  "title": "سخنرانی",
+  "description": "متن سخنرانی برای نقش و موضوع شما."
+ },
+ "shortcut-en:241": {
+  "title": "پاسخ به مشتری",
+  "description": "پاسخ مؤدبانه و حرفه‌ای به پیام مشتری."
+ },
+ "promptschat:17:composer": {
+  "title": "آهنگساز",
+  "description": "ملودی و ساختار موسیقی برای شعر شما."
+ },
+ "promptschat:142:chief-executive-officer": {
+  "title": "مدیرعامل",
+  "description": "تصمیم‌گیری راهبردی در سناریوهای کسب‌وکار."
+ },
+ "shortcut-en:50": {
+  "title": "نقش‌آفرینی شخصیت",
+  "description": "گفت‌وگو با سبک یک شخصیت داستانی."
+ },
+ "shortcut-en:237": {
+  "title": "بازی متنی داستانی",
+  "description": "رمان تعاملی در ژانر دلخواه."
+ },
+ "promptschat:28:philosopher": {
+  "title": "فیلسوف",
+  "description": "بحث فلسفی درباره‌ی پرسش شما."
+ },
+ "promptschat:57:self-help-book": {
+  "title": "کتاب خودیاری",
+  "description": "توصیه‌های کاربردی برای زندگی و کار."
+ },
+ "shortcut-en:92": {
+  "title": "توسعه‌دهنده‌ی UX/UI",
+  "description": "بهبود تجربه‌ی کاربری اپ و سایت."
+ },
+ "shortcut-en:194": {
+  "title": "مشاور همدل",
+  "description": "گفت‌وگوی همدلانه (جایگزین درمان نیست)."
+ },
+ "shortcut-en:236": {
+  "title": "حافظه با تداعی کلمات",
+  "description": "روش تداعی برای حفظ کردن لغات."
+ },
+ "shortcut-en:259": {
+  "title": "انتخاب ژورنال مقاله",
+  "description": "ژورنال مناسب برای ارسال مقاله‌ی علمی."
+ },
+ "shortcut-en:265": {
+  "title": "دستیار آموزشی هوشمند",
+  "description": "معلم خصوصی شخصی‌سازی‌شده."
+ },
+ "promptschat:9:travel-guide": {
+  "title": "راهنمای سفر",
+  "description": "پیشنهاد جاذبه‌های نزدیک شما."
+ },
+ "promptschat:101:python-interpreter": {
+  "title": "مفسر پایتون",
+  "description": "اجرای شبیه‌سازی‌شده‌ی کد پایتون."
+ },
+ "promptschat:109:machine-learning-engineer": {
+  "title": "مهندس یادگیری ماشین",
+  "description": "توضیح و پیاده‌سازی مدل‌های ML."
+ },
+ "promptschat:200:note-taking-assistant": {
+  "title": "یادداشت‌بردار",
+  "description": "یادداشت منظم از جلسه یا کلاس."
+ },
+ "shortcut-en:202": {
+  "title": "متخصص الگوریتم",
+  "description": "الگوریتم بهینه با تحلیل پیچیدگی."
+ },
+ "shortcut-en:243": {
+  "title": "خلاصه‌ی داستان فیلم",
+  "description": "روایت جذاب داستان فیلم."
+ },
+ "shortcut-en:257": {
+  "title": "تعریف مفهومی",
+  "description": "تعریف دقیق و تخصصی یک مفهوم."
+ },
+ "shortcut-en:258": {
+  "title": "تیتر مقاله‌ی علمی",
+  "description": "عنوان مناسب از چکیده و کلیدواژه‌ها."
+ },
+ "shortcut-en:275": {
+  "title": "دستیار مشاوره‌ی حقوقی",
+  "description": "نکات حقوقی اولیه؛ جایگزین وکیل نیست."
+ },
+ "promptschat:48:accountant": {
+  "title": "حسابدار",
+  "description": "راهکارهای مدیریت مالی و بودجه."
+ },
+ "promptschat:117:regex-generator": {
+  "title": "سازنده‌ی RegEx",
+  "description": "عبارت منظم دقیق برای الگوی شما."
+ },
+ "promptschat:127:software-quality-assurance-tester": {
+  "title": "تستر نرم‌افزار (QA)",
+  "description": "طرح تست و گزارش باگ."
+ },
+ "promptschat:151:song-recommender": {
+  "title": "پیشنهاددهنده‌ی آهنگ",
+  "description": "پلی‌لیست هم‌حال‌وهوا."
+ },
+ "shortcut-en:216": {
+  "title": "منتقد ادبی",
+  "description": "تحلیل ادبی متن یا شعر."
+ },
+ "shortcut-en:250": {
+  "title": "حلقه‌ی پرسش و پاسخ",
+  "description": "کاوش خودکار یک موضوع با پرسش‌وپاسخ."
+ },
+ "shortcut-en:262": {
+  "title": "برنامه‌ی ۳۰ روزه‌ی یادگیری",
+  "description": "برنامه‌ی شخصی برای یادگیری یک مهارت."
+ },
+ "shortcut-en:270": {
+  "title": "پرسش‌های کاوشگر",
+  "description": "پرسش‌های عمیق میان‌رشته‌ای."
+ },
+ "promptschat:38:career-counselor": {
+  "title": "مشاور شغلی",
+  "description": "مسیر شغلی متناسب با مهارت‌ها."
+ },
+ "promptschat:67:dietitian": {
+  "title": "متخصص تغذیه",
+  "description": "برنامه‌ی غذایی و دستور پخت سالم."
+ },
+ "promptschat:68:psychologist": {
+  "title": "روان‌شناس",
+  "description": "راهکارهای علمی؛ جایگزین درمان نیست."
+ },
+ "promptschat:90:historian": {
+  "title": "تاریخ‌دان",
+  "description": "تحلیل رویدادهای تاریخی با منبع."
+ },
+ "promptschat:111:svg-designer": {
+  "title": "طراح SVG",
+  "description": "ساخت تصویر برداری با کد SVG."
+ },
+ "promptschat:120:talent-coach": {
+  "title": "مربی مصاحبه",
+  "description": "آمادگی برای مصاحبه‌ی شغل هدف."
+ },
+ "shortcut-en:175": {
+  "title": "واکاوی موضوع",
+  "description": "شکستن موضوع به پرسش‌های کلیدی."
+ },
+ "shortcut-en:178": {
+  "title": "کامپوننت Vue 3",
+  "description": "ساخت کامپوننت Vue با Vite."
+ },
+ "shortcut-en:189": {
+  "title": "دستیار فرزندپروری",
+  "description": "پاسخ علمی به پرسش‌های تربیتی."
+ },
+ "shortcut-en:193": {
+  "title": "هم‌زبان تمرینی",
+  "description": "تمرین مکالمه برای تقویت زبان."
+ },
+ "shortcut-en:211": {
+  "title": "برجسته‌سازی نکات متن",
+  "description": "نکات کلیدی متن را مشخص می‌کند."
+ },
+ "shortcut-en:261": {
+  "title": "نکات کلیدی درس",
+  "description": "هسته‌ی اصلی یک موضوع برای یادگیری سریع."
+ },
+ "promptschat:55:interior-decorator": {
+  "title": "طراح داخلی",
+  "description": "ایده‌ی دکوراسیون و رنگ برای فضای شما."
+ },
+ "promptschat:86:elocutionist": {
+  "title": "مربی فن بیان",
+  "description": "تمرین سخنرانی و ارائه."
+ },
+ "promptschat:87:scientific-data-visualizer": {
+  "title": "مصورساز داده‌ی علمی",
+  "description": "نمودار مناسب برای داده‌ی شما."
+ },
+ "promptschat:112:it-expert": {
+  "title": "کارشناس IT",
+  "description": "حل مشکلات فنی کامپیوتر و شبکه."
+ },
+ "shortcut-en:179": {
+  "title": "بازی D&D متنی",
+  "description": "گرداننده‌ی بازی نقش‌آفرینی."
+ },
+ "shortcut-en:198": {
+  "title": "داستان کوتاه",
+  "description": "داستان کوتاه از چند کلیدواژه."
+ },
+ "shortcut-en:254": {
+  "title": "طوفان فکری برند",
+  "description": "ایده‌ی برند با نمونه‌های موفق."
+ },
+ "shortcut-en:273": {
+  "title": "خروج از حباب اطلاعاتی",
+  "description": "دیدگاه‌های تازه خارج از عادت فکری."
+ },
+ "promptschat:2:linux-terminal": {
+  "title": "ترمینال لینوکس",
+  "description": "شبیه‌ساز ترمینال برای تمرین فرمان‌ها."
+ },
+ "promptschat:32:cyber-security-specialist": {
+  "title": "متخصص امنیت سایبری",
+  "description": "راهکار دفاعی برای حفاظت داده."
+ },
+ "promptschat:65:instructor-in-a-school": {
+  "title": "مدرس الگوریتم",
+  "description": "آموزش الگوریتم برای مبتدی‌ها."
+ },
+ "promptschat:139:salesperson": {
+  "title": "فروشنده",
+  "description": "تمرین فروش و متقاعدسازی."
+ },
+ "promptschat:162:wikipedia-page": {
+  "title": "صفحه‌ی ویکی‌پدیا",
+  "description": "خلاصه‌ی دانشنامه‌ای یک موضوع."
+ },
+ "shortcut-en:47": {
+  "title": "خلاصه‌ی کتاب غیرداستانی",
+  "description": "درس‌های کاربردی یک کتاب."
+ },
+ "shortcut-en:203": {
+  "title": "یادگیری و تصحیح انگلیسی",
+  "description": "تصحیح متن با توضیح نکته."
+ },
+ "promptschat:26:motivational-speaker": {
+  "title": "سخنران انگیزشی",
+  "description": "متن انگیزشی برای هدف شما."
+ },
+ "promptschat:79:social-media-influencer": {
+  "title": "اینفلوئنسر شبکه‌های اجتماعی",
+  "description": "محتوای جذاب برای اینستاگرام و…"
+ },
+ "promptschat:128:tic-tac-toe-game": {
+  "title": "بازی دوز",
+  "description": "بازی دوز متنی."
+ },
+ "promptschat:140:commit-message-generator": {
+  "title": "پیام کامیت",
+  "description": "پیام کامیت استاندارد از تغییرات."
+ },
+ "promptschat:145:startup-tech-lawyer": {
+  "title": "وکیل استارتاپ",
+  "description": "پیش‌نویس قرارداد همکاری (بازبینی وکیل لازم است)."
+ },
+ "promptschat:482:life-coach": {
+  "title": "مربی زندگی",
+  "description": "برنامه‌ی روزانه و هفتگی متعادل."
+ },
+ "shortcut-en:245": {
+  "title": "طراح آیکون",
+  "description": "ایده‌ی آیکون برای مفهوم شما."
+ },
+ "shortcut-en:271": {
+  "title": "رفع سردرگمی",
+  "description": "کمک به پیدا کردن سؤال درست."
+ },
+ "promptschat:10:plagiarism-checker": {
+  "title": "بررسی سرقت ادبی",
+  "description": "بازنویسی برای اصالت متن."
+ },
+ "promptschat:23:relationship-coach": {
+  "title": "مشاور روابط",
+  "description": "راهکار برای حل اختلاف."
+ },
+ "promptschat:76:fallacy-finder": {
+  "title": "مغالطه‌یاب",
+  "description": "شناسایی خطاهای منطقی در استدلال."
+ },
+ "promptschat:108:personal-stylist": {
+  "title": "استایلیست شخصی",
+  "description": "پیشنهاد پوشش متناسب با موقعیت."
+ },
+ "promptschat:152:cover-letter": {
+  "title": "کاورلتر",
+  "description": "نامه‌ی همراه رزومه برای درخواست شغل."
+ },
+ "shortcut-en:201": {
+  "title": "سازنده‌ی سند فرایند",
+  "description": "مستندسازی فرایند کاری گام‌به‌گام."
+ },
+ "shortcut-en:274": {
+  "title": "متن به تصویر",
+  "description": "ایده‌ی تصویرسازی برای مقاله."
+ },
+ "promptschat:27:philosophy-teacher": {
+  "title": "معلم فلسفه",
+  "description": "توضیح ساده‌ی مفاهیم فلسفی."
+ }
+}

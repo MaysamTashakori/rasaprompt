@@ -44,3 +44,43 @@ export class MockClient implements LlmClient {
     return { text: this.fn(r), costUsd: 0 }
   }
 }
+
+/**
+ * سرویس‌های سازگار با OpenAI (مثلاً درگاه‌های داخلی مانند GapGPT، یا Ollama/vLLM محلی).
+ * env: LLM_BASE_URL (مثلاً https://…/v1)، LLM_API_KEY. کلید فقط در .env — هرگز در مخزن.
+ */
+export class OpenAICompatClient implements LlmClient {
+  private baseUrl: string
+  private apiKey: string
+  private rateIn: number
+  private rateOut: number
+  constructor(
+    baseUrl = process.env.LLM_BASE_URL ?? "",
+    apiKey = process.env.LLM_API_KEY ?? "",
+    rateIn = Number(process.env.LLM_RATE_IN ?? 0),
+    rateOut = Number(process.env.LLM_RATE_OUT ?? 0),
+  ) {
+    if (!baseUrl) throw new Error("LLM_BASE_URL تنظیم نشده است")
+    this.baseUrl = baseUrl.replace(/\/+$/, "")
+    this.apiKey = apiKey
+    this.rateIn = rateIn
+    this.rateOut = rateOut
+  }
+  async complete({ model, prompt, system, maxTokens = 1024 }: LlmRequest): Promise<LlmResponse> {
+    const messages = [...(system ? [{ role: "system", content: system }] : []), { role: "user", content: prompt }]
+    const res = await fetch(`${this.baseUrl}/chat/completions`, {
+      method: "POST",
+      headers: { "content-type": "application/json", ...(this.apiKey ? { authorization: `Bearer ${this.apiKey}` } : {}) },
+      body: JSON.stringify({ model, messages, max_tokens: maxTokens }),
+    })
+    if (!res.ok) throw new Error(`LLM ${res.status}: ${(await res.text()).slice(0, 200)}`)
+    const j = (await res.json()) as { choices: { message: { content: string } }[]; usage?: { prompt_tokens: number; completion_tokens: number } }
+    const u = j.usage ?? { prompt_tokens: 0, completion_tokens: 0 }
+    return { text: j.choices[0]?.message.content ?? "", costUsd: (u.prompt_tokens * this.rateIn + u.completion_tokens * this.rateOut) / 1e6 }
+  }
+}
+
+/** انتخاب کلاینت از env: LLM_PROVIDER=openai-compat|anthropic */
+export function clientFromEnv(): LlmClient {
+  return process.env.LLM_PROVIDER === "anthropic" ? new AnthropicClient() : new OpenAICompatClient()
+}

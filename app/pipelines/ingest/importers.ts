@@ -25,7 +25,7 @@ export function importPromptsChat(csv: string, commit: string): SourcedPrompt[] 
 
 /** rockbenben/ChatGPT-Shortcut — prompt_<lang>.json (MIT). هر رکورد: {<lang>: {title,prompt,description,remark}, tags, id} */
 export function importShortcut(json: string, lang: "ar" | "en", commit: string): SourcedPrompt[] {
-  type Row = Record<string, unknown> & { id?: string; tags?: string[] | string }
+  type Row = Record<string, unknown> & { id?: string; tags?: string[] | string; weight?: string | number; website?: string }
   const rows = JSON.parse(json) as Row[]
   const out: SourcedPrompt[] = []
   for (const r of rows) {
@@ -43,6 +43,8 @@ export function importShortcut(json: string, lang: "ar" | "en", commit: string):
       body: v.prompt,
       description: v.description,
       tags,
+      popularity: Number(r.weight) || 0,
+      sameAs: typeof r.website === "string" ? r.website : undefined,
     })
   }
   return out

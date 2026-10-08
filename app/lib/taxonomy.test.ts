@@ -7,6 +7,8 @@ test("classifyField prefers title signals", () => {
   assert.equal(classifyField("Resume Writer", "Write a resume and cover letter", []), "career")
   assert.equal(classifyField("SEO Keyword Planner", "marketing", []), "marketing")
   assert.equal(classifyField("Xyzzy", "nothing here", []), "productivity")
+  assert.equal(classifyField("Kanban Board", "Build a kanban app with HTML, CSS and JavaScript", []), "coding")
+  assert.equal(classifyField("Article Continued", "Continue the article", []), "writing")
 })
 
 test("classifyLevel by length/structure", () => {
