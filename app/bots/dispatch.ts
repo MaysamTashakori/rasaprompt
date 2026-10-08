@@ -9,6 +9,12 @@ export async function dispatch(api: BotApi, u: Update, ctx: Ctx) {
   const admin = await handleAdmin(u, ctx, svc)
   if (admin) {
     await api.run(admin.actions)
+    if (admin.files) {
+      for (const f of admin.files.paths) {
+        const [method, field] = f.endsWith(".png") ? (["sendPhoto", "photo"] as const) : (["sendVideo", "video"] as const)
+        await api.sendFile(admin.files.chat, method, field, f).catch((e) => console.error("[bot] file", (e as Error).message))
+      }
+    }
     if (admin.broadcast) {
       const from = u.callback_query?.from.id
       void broadcast(api, ctx.store.users?.() ?? [], admin.broadcast.text, from)

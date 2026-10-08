@@ -24,6 +24,7 @@ export interface AdminService {
   enqueue(agent: string, task: string): QueueItem | null
   queue(): QueueItem[]
   createVouchers(credits: number, count: number): string[]
+  studio(): Promise<{ ok: boolean; dir?: string; files: string[]; caption?: string; out: string }>
 }
 
 const root = () => (fs.existsSync(path.join(process.cwd(), "content")) ? process.cwd() : path.resolve(process.cwd(), ".."))
@@ -116,4 +117,14 @@ export class FsAdminService implements AdminService {
   }
   queue() { return readJson<QueueItem[]>(this.p("content", "agent-queue.json"), []) }
   createVouchers(credits: number, count: number) { return new VoucherStore().create(credits, count) }
+  studio() {
+    return new Promise<{ ok: boolean; dir?: string; files: string[]; caption?: string; out: string }>((resolve) => {
+      execFile("npx", ["tsx", "scripts/studio.ts", "--daily"], { cwd: path.join(root(), "app"), timeout: 300_000 }, (err, stdout, stderr) => {
+        const dir = stdout.match(/✓ (.+)/)?.[1]?.trim()
+        if (err || !dir) return resolve({ ok: false, files: [], out: (stderr || String(err ?? "")).slice(0, 600) })
+        const files = fs.readdirSync(dir).filter((f) => /\.(png|mp4|webm)$/.test(f)).sort().map((f) => path.join(dir, f))
+        resolve({ ok: true, dir, files, caption: fs.readFileSync(path.join(dir, "caption.txt"), "utf8"), out: stdout.slice(0, 400) })
+      })
+    })
+  }
 }

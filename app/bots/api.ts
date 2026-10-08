@@ -22,6 +22,18 @@ export class BotApi {
     return j.result as T
   }
 
+  /** ارسال فایل (عکس/ویدیو/سند) با multipart */
+  async sendFile(chat: number, method: "sendPhoto" | "sendVideo" | "sendDocument", field: "photo" | "video" | "document", file: string, caption?: string) {
+    const { readFile } = await import("node:fs/promises")
+    const form = new FormData()
+    form.set("chat_id", String(chat))
+    if (caption) form.set("caption", caption.slice(0, 1000))
+    form.set(field, new Blob([await readFile(file)]), file.split("/").pop())
+    const res = await fetch(`${this.base}/${method}`, { method: "POST", body: form })
+    const j = (await res.json().catch(() => ({}))) as { ok?: boolean; description?: string }
+    if (!j.ok) throw new Error(`${this.platform}.${method}: ${j.description ?? res.status}`)
+  }
+
   getUpdates(offset: number, timeout = 25) {
     return this.call<Update[]>("getUpdates", { offset, timeout, allowed_updates: ["message", "callback_query"] })
   }

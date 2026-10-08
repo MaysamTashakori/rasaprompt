@@ -20,6 +20,7 @@ const svc: AdminService = {
   enqueue: (a, t) => (calls.push(`run:${a}:${t}`), { id: "1", agent: a, task: t, at: "", status: "queued" }),
   queue: () => [],
   createVouchers: (c, n) => Array.from({ length: n }, (_, i) => `RASA-${c}-${i}`),
+  studio: async () => ({ ok: true, dir: "/x", files: ["/x/slide-1.png", "/x/reel.mp4"], caption: "cap", out: "" }),
 }
 const ctx = { platform: "telegram" as const, store: new MemoryStore(), siteUrl: "" }
 const admins = new Set([42])
@@ -58,4 +59,9 @@ test("broadcast requires confirmation", async () => {
   assert.equal(c!.broadcast?.text, "سلام همه")
   const again = await handleAdmin(cb(`a:bc:${id}`), ctx, svc, admins)
   assert.ok(!again!.broadcast)
+})
+
+test("studio returns files for admin review", async () => {
+  const r = await handleAdmin(cb("a:studio"), ctx, svc, admins)
+  assert.deepEqual(r!.files?.paths, ["/x/slide-1.png", "/x/reel.mp4"])
 })

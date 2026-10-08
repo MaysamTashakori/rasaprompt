@@ -22,3 +22,5 @@
 | [Support](support.md) | پاسخ به تیکت‌ها | روزانه |
 | [Engineer](engineer.md) | کد، ابزارهای رایگان، ویجت، افزونه، MCP | طبق نقشه‌ی راه |
 | [Telegram-Ops](telegram-ops.md) | مدیریت ربات تلگرام/بله/ایتا | روزانه |
+| [Content-Studio](content-studio.md) | بسته‌ی پست اینستاگرام: متن، کاروسل، ریلز موشن‌گرافیک | روزانه |
+| [Instagram-Strategist](instagram-strategist.md) | تقویم و تحلیل محتوای اینستاگرام | هفتگی |

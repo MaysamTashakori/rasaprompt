@@ -10,7 +10,7 @@ const pendingBroadcast = new Map<string, string>()
 const panel: Keyboard = [
   [{ text: "📊 آمار", callback_data: "a:stats" }, { text: "📚 منابع", callback_data: "a:sources" }],
   [{ text: "🤖 عامل‌ها", callback_data: "a:agents" }, { text: "🗂 صف کارها", callback_data: "a:queue" }],
-  [{ text: "🔄 بازسازی کاتالوگ", callback_data: "a:rebuild" }],
+  [{ text: "🔄 بازسازی کاتالوگ", callback_data: "a:rebuild" }, { text: "🎬 پست اینستاگرام روز", callback_data: "a:studio" }],
 ]
 
 const HELP = `پنل مدیریت رسا
@@ -23,7 +23,7 @@ const HELP = `پنل مدیریت رسا
 /voucher <اعتبار> [تعداد]  ساخت کد اعتبار برای فروش دستی
 /broadcast <متن>  ارسال همگانی (با تأیید)`
 
-export interface AdminResult { actions: Action[]; broadcast?: { text: string } }
+export interface AdminResult { actions: Action[]; broadcast?: { text: string }; files?: { chat: number; paths: string[]; caption?: string } }
 
 export async function handleAdmin(u: Update, ctx: Ctx, svc: AdminService, admins = adminIds(ctx.platform)): Promise<AdminResult | null> {
   const from = u.message?.from?.id ?? u.callback_query?.from.id
@@ -77,6 +77,11 @@ export async function handleAdmin(u: Update, ctx: Ctx, svc: AdminService, admins
       case "queue": {
         const q = svc.queue().slice(-15).reverse()
         return { actions: [ack, say(q.length ? `🗂 آخرین کارها\n${q.map((x) => `${x.status === "queued" ? "⏳" : x.status === "done" ? "✅" : "⚠️"} [${x.agent}] ${x.task.slice(0, 80)}`).join("\n")}` : "صف خالی است.")] }
+      }
+      case "studio": {
+        const r = await svc.studio()
+        if (!r.ok) return { actions: [ack, say(`⚠️ ساخت محتوا ناموفق بود\n${r.out}`)] }
+        return { actions: [ack, say(`🎬 بسته‌ی اینستاگرام آماده شد (${r.files.length} فایل). کپشن:\n\n${r.caption ?? ""}\n\nبعد از بازبینی، دستی منتشر کنید.`)], files: { chat, paths: r.files, caption: undefined } }
       }
       case "bc": {
         const text = pendingBroadcast.get(arg ?? "")
