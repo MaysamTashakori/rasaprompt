@@ -10,3 +10,5 @@
 - 2026-10-08 — Claude: ۵ منبع مجاز انتخاب و commit قفل شد؛ ۲٬۹۹۲ پرامپت (promptschat ۲۱۶۹، shortcut ar/en ۵۵۸، fabric ۲۶۵) در content/imported؛ ردشده‌ها مستند.
 - 2026-10-08 — Claude: pipelines/trends.ts (امتیاز ترند + دروازه‌ی لایسنس) با تست.
 - 2026-10-08 — Claude: مدل درآمد v2 (سند ۱۱)، عمودی‌ها (سند ۱۲)، finance/model.py به‌روز (تبلیغ/افیلیت/اسپانسر/عمودی)، pricing.json v2.
+- 2026-10-08 — Claude: استراتژی ایران‌محور (docs/13)، مدل مالی ایران، pricing.json v3 (اشتراک ۳ماهه، دانشجویی، rate card اسپانسری)، ADR-015..018.
+- 2026-10-08 — Claude: آرشیو منابع آزاد در سایت (/archive، noindex، انتساب، کپی)، localize pipeline با تست، default locale=fa، برچسب «نمونه» روی seed (اصلاح نشان تست جعلی).

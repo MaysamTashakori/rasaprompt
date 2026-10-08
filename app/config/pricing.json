@@ -1,5 +1,5 @@
 {
-  "version": 2,
+  "version": 3,
   "reviewed_at": "2026-10-08",
   "note": "همه‌ی قیمت‌ها فرض اولیه‌اند؛ فقط با تأیید مالک تغییر کنند. جزئیات: docs/02-business-model-and-pricing.md",
   "markets": {
@@ -52,7 +52,9 @@
         "plus_monthly": 299000,
         "plus_annual": 2490000,
         "lifetime_founder": 4900000,
-        "team_monthly": 990000
+        "team_monthly": 990000,
+        "plus_quarterly": 750000,
+        "student_monthly": 100000
       }
     }
   },
@@ -125,5 +127,24 @@
     "customer_single_pct": 20,
     "customer_recurring_pct": 30,
     "recurring_months": 12
+  },
+  "ir": {
+    "note": "فرض 🧭؛ rate card اسپانسری — docs/13-iran-first-strategy.md",
+    "sponsorship_rate_card_irt": {
+      "newsletter_issue": 3000000,
+      "telegram_post": 2000000,
+      "sponsored_pack_month": 15000000,
+      "verified_badge_month": 8000000
+    },
+    "discount_events": [
+      "yalda",
+      "nowruz",
+      "white_friday"
+    ],
+    "refund_days": 7,
+    "referral": {
+      "referrer_pct": 20,
+      "referee_pct": 10
+    }
   }
 }

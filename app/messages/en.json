@@ -71,5 +71,15 @@
   "guarantee": "Tested guarantee: if it fails on the stated model, 14-day refund.",
   "footer": "Built with FarsiUI",
   "prompts404": "No prompts found.",
-  "back": "Back"
+  "back": "Back",
+  "sampleBadge": "Sample · not yet tested",
+  "copy": "Copy",
+  "copied": "Copied",
+  "archive": "Open-source archive",
+  "archiveNote": "Raw prompts from openly licensed sources, with attribution. Translation and testing are queued; not indexed by search engines until enriched.",
+  "source": "Source",
+  "license": "License",
+  "prev": "Previous",
+  "next": "Next",
+  "page": "Page"
 }

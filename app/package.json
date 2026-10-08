@@ -10,7 +10,7 @@
     "lint": "eslint",
     "format": "prettier --write \"**/*.{ts,tsx}\"",
     "typecheck": "tsc --noEmit",
-    "test": "node --test --experimental-strip-types lib/*.test.ts pipelines/*.test.ts pipelines/ingest/*.test.ts pipelines/trends.test.ts"
+    "test": "node --test --experimental-strip-types lib/*.test.ts pipelines/*.test.ts pipelines/ingest/*.test.ts pipelines/trends.test.ts pipelines/localize.test.ts lib/taxonomy.test.ts"
   },
   "dependencies": {
     "@electric-sql/pglite": "^0.5.8",

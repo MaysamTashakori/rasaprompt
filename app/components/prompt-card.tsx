@@ -17,7 +17,7 @@ export async function PromptCard({ p, locale }: { p: SeedPrompt; locale: Locale 
       </div>
       <h3 className="font-semibold leading-snug group-hover:text-accent">{p.title[locale]}</h3>
       <p className="line-clamp-2 text-sm text-muted">{p.summary[locale]}</p>
-      <div className="mt-auto"><TestBadge tested={p.tested} /></div>
+      <div className="mt-auto"><TestBadge tested={p.tested} sample={p.sample} /></div>
     </Link>
   )
 }

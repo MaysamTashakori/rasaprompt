@@ -14,7 +14,7 @@ export default async function LibraryPage({ params }: { params: Promise<{ locale
     category: p.category,
     categoryLabel: t(`cat.${p.category}`),
     tierLabel: t(`tiers.${p.tier}`),
-    badge: t("tested", { model: p.tested.model, date: p.tested.date }),
+    badge: p.sample ? t("sampleBadge") : t("tested", { model: p.tested.model, date: p.tested.date }),
   }))
   return (
     <div className="space-y-6">

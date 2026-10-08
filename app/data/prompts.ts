@@ -1,4 +1,4 @@
-// داده‌ی نمونه‌ی seed — در تولید از پایگاه‌داده می‌آید (docs/04-data-model.md). متن‌ها نمونه‌اند، نه محصول نهایی.
+// داده‌ی نمونه‌ی seed — نمره/مدل/تاریخ تست در این فایل ساختگی و فقط برای نمایش UI است، نه نتیجه‌ی واقعی — در تولید از پایگاه‌داده می‌آید (docs/04-data-model.md). متن‌ها نمونه‌اند، نه محصول نهایی.
 import type { Locale } from "@/i18n/routing"
 
 export type Tier = "lite" | "pro" | "elite"
@@ -13,6 +13,8 @@ export interface SeedPrompt {
   summary: L10n
   sampleOutput: L10n
   variables: string[]
+  /** داده‌ی نمونه: «تست‌شده» فقط نمایشی است و تست واقعی انجام نشده */
+  sample: true
 }
 
 export const prompts: SeedPrompt[] = [
@@ -32,6 +34,7 @@ export const prompts: SeedPrompt[] = [
       en: "Hello Ms. Ahmadi, we hope you are feeling better after yesterday's visit. Your next appointment is …",
       ar: "مرحباً السيدة أحمدي، نأمل أن تكوني بخير بعد زيارة الأمس. موعدك القادم …",
     },
+    sample: true,
     variables: ["patient_name", "visit_type", "next_date"],
   },
   {
@@ -50,6 +53,7 @@ export const prompts: SeedPrompt[] = [
       en: "Bright 120 sqm apartment with parking and storage, steps from the metro …",
       ar: "شقة مشمسة ١٢٠ م² مع موقف ومخزن، على بعد خطوات من المترو …",
     },
+    sample: true,
     variables: ["area", "rooms", "neighbourhood", "price"],
   },
   {
@@ -68,6 +72,7 @@ export const prompts: SeedPrompt[] = [
       en: "Senior Software Engineer — remote …",
       ar: "مهندس برمجيات أول — عن بُعد …",
     },
+    sample: true,
     variables: ["role", "seniority", "salary_range"],
   },
   {
@@ -86,6 +91,7 @@ export const prompts: SeedPrompt[] = [
       en: "Search intent: informational-commercial. H1: …",
       ar: "نية البحث: معلوماتية-تجارية. H1: …",
     },
+    sample: true,
     variables: ["keyword", "audience", "locale"],
   },
   {
@@ -104,6 +110,7 @@ export const prompts: SeedPrompt[] = [
       en: "1. SQL injection risk at line 42 …",
       ar: "١. خطر حقن SQL في السطر 42 …",
     },
+    sample: true,
     variables: ["language", "diff"],
   },
   {
@@ -122,6 +129,7 @@ export const prompts: SeedPrompt[] = [
       en: "Reminder: your appointment is tomorrow at 10:00.",
       ar: "تذكير: موعدك غداً الساعة 10:00.",
     },
+    sample: true,
     variables: ["time"],
   },
 ]

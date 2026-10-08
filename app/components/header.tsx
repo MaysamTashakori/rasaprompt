@@ -13,6 +13,7 @@ export async function Header({ locale }: { locale: Locale }) {
         <Link href={`/${locale}`} className="font-semibold">{t("brand")}</Link>
         <nav className="flex gap-4 text-sm text-muted">
           <Link href={`/${locale}/library`} className="hover:text-fg">{t("nav.library")}</Link>
+          <Link href={`/${locale}/archive`} className="hover:text-fg">{t("archive")}</Link>
           <Link href={`/${locale}#pricing`} className="hover:text-fg">{t("nav.pricing")}</Link>
         </nav>
         <div className="ms-auto flex items-center gap-2 text-sm">

@@ -25,7 +25,7 @@ export default async function PromptPage({ params }: { params: Promise<{ locale:
       <Link href={`/${locale}/library`} className="text-sm text-muted hover:text-fg">← {t("back")}</Link>
       <h1 className="text-3xl font-bold leading-tight">{p.title[locale]}</h1>
       <p className="text-muted">{p.summary[locale]}</p>
-      <TestBadge tested={p.tested} />
+      <TestBadge tested={p.tested} sample={p.sample} />
       <section className="space-y-2">
         <h2 className="font-semibold">{t("sample")}</h2>
         <pre className="whitespace-pre-wrap rounded-xl border border-border bg-card p-4 text-sm leading-relaxed">{p.sampleOutput[locale]}</pre>

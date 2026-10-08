@@ -21,3 +21,4 @@
 | [Analyst](analyst.md) | KPI، هزینه، هشدار | هفتگی |
 | [Support](support.md) | پاسخ به تیکت‌ها | روزانه |
 | [Engineer](engineer.md) | کد، ابزارهای رایگان، ویجت، افزونه، MCP | طبق نقشه‌ی راه |
+| [Telegram-Ops](telegram-ops.md) | مدیریت ربات تلگرام/بله/ایتا | روزانه |

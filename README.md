@@ -9,7 +9,7 @@ npm install
 npm run dev          # http://localhost:3000  → /fa  /en  /ar
 npm run build && npm start
 npm run lint && npm run typecheck && npm test
-python3 ../finance/model.py     # مدل مالی (همه‌ی ورودی‌ها فرض هستند)
+python3 ../finance/model_ir.py  # مدل مالی ایران (فرض‌ها) ؛ model.py = بازار بین‌المللی
 ```
 پایگاه‌داده هنوز متصل نیست؛ سایت با داده‌ی نمونه‌ی `app/data/prompts.ts` کار می‌کند. برای مرحله‌ی بعد: `docker compose up -d db` و `app/.env.example`.
 
@@ -23,8 +23,9 @@ python3 ../finance/model.py     # مدل مالی (همه‌ی ورودی‌ها
 | `docs/02-business-model-and-pricing.md` | **مدل درآمد و قیمت‌گذاری** + `finance/` |
 | `docs/03…05` | معماری، مدل داده، پایپ‌لاین‌های خودکار |
 | `docs/06-agents.md` | مجموعه‌ی عامل‌ها |
+| `docs/13-iran-first-strategy.md` | **استراتژی ایران‌محور (اولویت فعلی)** |
 | `docs/10…12` | **منابع محتوا، مدل درآمد v2 (تبلیغات+افیلیت+اسپانسری)، عمودی‌های 3D/AI Elements/Skills** |
-| `agents/` | ۱۷ عامل با منابع و ممنوعیت‌ها |
+| `agents/` | ۱۸ عامل با منابع و ممنوعیت‌ها |
 | `content/` | منابع مجاز (`sources.json`)، واردشده‌ها (`imported/`)، اعلان‌های لایسنس |
 | `docs/07…09` | نقشه‌ی راه، سئو، SOP و KPI |
 | `docs/living/` | **اسناد زنده**: DECISIONS (ADR)، LIMITATIONS، MEMORY، DESIGN |
