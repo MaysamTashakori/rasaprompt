@@ -1,14 +1,15 @@
 "use client"
 // پر کردن متغیرها → پرامپت نهایی → کپی / باز کردن در ابزار
 import { useMemo, useState } from "react"
-import { Check, Copy, ExternalLink } from "lucide-react"
+import { Check, Copy, ArrowSquareOut, Play } from "@phosphor-icons/react"
 
 export function PromptRunner({
-  body, variables, labels,
+  body, variables, labels, chatHref,
 }: {
   body: string
   variables: string[]
-  labels: { fill: string; final: string; copy: string; copied: string; openIn: string }
+  labels: { fill: string; final: string; copy: string; copied: string; openIn: string; run: string }
+  chatHref: string
 }) {
   const [vals, setVals] = useState<Record<string, string>>({})
   const [ok, setOk] = useState(false)
@@ -30,7 +31,7 @@ export function PromptRunner({
               <label key={v} className="flex flex-col gap-1 text-xs text-muted">
                 <span dir="auto">{v.replace(/_/g, " ")}</span>
                 <input dir="auto" value={vals[v] ?? ""} onChange={(e) => setVals({ ...vals, [v]: e.target.value })}
-                  className="rounded-lg border border-border bg-bg px-3 py-2 text-sm text-fg outline-none focus:border-accent" />
+                  className="rounded-xl border border-border bg-bg px-3 py-2.5 text-sm text-fg outline-none transition focus:border-accent focus:ring-4 focus:ring-accent/10" />
               </label>
             ))}
           </div>
@@ -39,16 +40,23 @@ export function PromptRunner({
       <div className="card overflow-hidden">
         <div className="flex items-center gap-2 border-b border-border bg-subtle px-4 py-2 text-xs text-muted">
           <span>{labels.final}</span>
-          <button type="button" onClick={copy} className="ms-auto inline-flex items-center gap-1.5 rounded-lg bg-accent px-3 py-1.5 font-medium text-accent-fg">
+          <button type="button" onClick={copy} className="btn-primary ms-auto px-3 py-1.5 text-xs">
             {ok ? <Check className="size-3.5" /> : <Copy className="size-3.5" />} {ok ? labels.copied : labels.copy}
           </button>
         </div>
-        <pre dir="auto" className="max-h-[28rem] overflow-auto whitespace-pre-wrap p-4 font-sans text-sm leading-7">{finalText}</pre>
+        <pre dir="auto" className="max-h-[32rem] overflow-auto whitespace-pre-wrap p-5 font-sans text-[15px] leading-8">
+          {finalText.split(/(\{\{[^{}\n]{1,40}?\}\}|\[[^\[\]\n]{1,30}\])/g).map((part, i) =>
+            i % 2 === 1 ? <mark key={i} className="rounded-md bg-accent-soft px-1 text-accent">{part}</mark> : part,
+          )}
+        </pre>
       </div>
       <div className="flex flex-wrap items-center gap-2 text-xs text-muted">
+        <a href={chatHref} onClick={() => { try { sessionStorage.setItem("rasa:run", finalText) } catch {} }} className="btn-accent me-2">
+          <Play className="size-4" weight="fill" /> {labels.run}
+        </a>
         <span>{labels.openIn}:</span>
-        <a className="chip" target="_blank" rel="noopener noreferrer" href={`https://chatgpt.com/?q=${q}`}>ChatGPT <ExternalLink className="size-3" /></a>
-        <a className="chip" target="_blank" rel="noopener noreferrer" href={`https://claude.ai/new?q=${q}`}>Claude <ExternalLink className="size-3" /></a>
+        <a className="chip" target="_blank" rel="noopener noreferrer" href={`https://chatgpt.com/?q=${q}`}>ChatGPT <ArrowSquareOut className="size-3" /></a>
+        <a className="chip" target="_blank" rel="noopener noreferrer" href={`https://claude.ai/new?q=${q}`}>Claude <ArrowSquareOut className="size-3" /></a>
       </div>
     </div>
   )

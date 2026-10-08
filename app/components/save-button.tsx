@@ -1,6 +1,6 @@
 "use client"
 import { useSyncExternalStore } from "react"
-import { Bookmark, BookmarkCheck } from "lucide-react"
+import { BookmarkSimple } from "@phosphor-icons/react"
 
 // ذخیره‌ها فقط در مرورگر کاربر (localStorage)؛ بدون حساب کاربری
 const KEY = "rasa:saved"
@@ -39,7 +39,7 @@ export function SaveButton({ slug, label, done }: { slug: string; label: string;
   const on = useSaved().includes(slug)
   return (
     <button type="button" onClick={() => toggleSaved(slug)} aria-pressed={on} className="btn-ghost">
-      {on ? <BookmarkCheck className="size-4 text-accent" /> : <Bookmark className="size-4" />}
+      <BookmarkSimple className={`size-4 ${on ? "text-accent" : ""}`} weight={on ? "fill" : "regular"} />
       {on ? done : label}
     </button>
   )

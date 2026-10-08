@@ -2,35 +2,34 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
+/* سیستم طراحی رسا: خنثی‌های zinc + یک رنگ تأکیدی (زمردی). شعاع: کارت ۱۶px، دکمه ۱۲px، چیپ‌ها کامل. */
 :root {
-  --bg: #fbfbfa;
-  --fg: #18181b;
-  --muted: #71717a;
+  --bg: #fafafa;
+  --fg: #0d0d10;
+  --muted: #62626b;
   --card: #ffffff;
-  --subtle: #f4f4f5;
-  --border: #e4e4e7;
-  --accent: #4f46e5;
-  --accent-2: #0ea5e9;
+  --subtle: #f2f2f4;
+  --border: #e5e5e8;
+  --accent: #047857;
+  --accent-soft: #e6f4ee;
   --accent-fg: #ffffff;
-  --ok: #15803d;
-  --ok-bg: #dcfce7;
-  --warn: #a16207;
-  --warn-bg: #fef9c3;
+  --warn: #9a6700;
+  --warn-bg: #fdf3d7;
+  --shadow: 0 1px 2px rgb(13 13 16 / 0.04), 0 8px 24px -12px rgb(13 13 16 / 0.12);
 }
 .dark {
-  --bg: #0a0a0b;
-  --fg: #fafafa;
+  --bg: #0b0b0d;
+  --fg: #f4f4f5;
   --muted: #a1a1aa;
-  --card: #141416;
-  --subtle: #1c1c1f;
-  --border: #27272a;
-  --accent: #818cf8;
-  --accent-2: #38bdf8;
-  --accent-fg: #0a0a0b;
-  --ok: #4ade80;
-  --ok-bg: #052e16;
-  --warn: #facc15;
-  --warn-bg: #2a2205;
+  --card: #131316;
+  --subtle: #1b1b1f;
+  --border: #26262b;
+  --accent: #34d399;
+  --accent-soft: #0f2a21;
+  --accent-fg: #06261b;
+  --warn: #f5c451;
+  --warn-bg: #2a2206;
+  --shadow: 0 1px 2px rgb(0 0 0 / 0.4), 0 12px 32px -16px rgb(0 0 0 / 0.6);
 }
 
 @theme inline {
@@ -41,36 +40,48 @@
   --color-subtle: var(--subtle);
   --color-border: var(--border);
   --color-accent: var(--accent);
-  --color-accent-2: var(--accent-2);
+  --color-accent-soft: var(--accent-soft);
   --color-accent-fg: var(--accent-fg);
-  --color-ok: var(--ok);
-  --color-ok-bg: var(--ok-bg);
   --color-warn: var(--warn);
   --color-warn-bg: var(--warn-bg);
   --font-sans: var(--font-latin), var(--font-fa), var(--font-ar), system-ui, sans-serif;
+  --font-mono: var(--font-mono-latin), ui-monospace, monospace;
 }
 
 html[lang="fa"] { --font-sans: var(--font-fa), var(--font-latin), system-ui, sans-serif; }
 html[lang="ar"] { --font-sans: var(--font-ar), var(--font-latin), system-ui, sans-serif; }
 
-body { background: var(--bg); color: var(--fg); font-family: var(--font-sans); }
-::selection { background: color-mix(in oklab, var(--accent) 25%, transparent); }
+body { background: var(--bg); color: var(--fg); font-family: var(--font-sans); font-feature-settings: "ss01"; }
+::selection { background: color-mix(in oklab, var(--accent) 28%, transparent); }
 
-.text-gradient {
-  background: linear-gradient(90deg, var(--accent), var(--accent-2));
-  -webkit-background-clip: text; background-clip: text; color: transparent;
+/* بافت دانه‌ای ثابت (فقط لایه‌ی fixed و pointer-events-none) */
+.grain::after {
+  content: ""; position: fixed; inset: 0; z-index: 60; pointer-events: none; opacity: 0.035;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
 }
-.hero-glow {
-  background:
-    radial-gradient(60% 50% at 50% 0%, color-mix(in oklab, var(--accent) 18%, transparent), transparent 70%),
-    radial-gradient(40% 40% at 85% 20%, color-mix(in oklab, var(--accent-2) 14%, transparent), transparent 70%);
+.dark .grain::after { opacity: 0.06; }
+
+/* نقطه‌چین پس‌زمینه برای بخش‌های تأکیدی */
+.dot-grid { background-image: radial-gradient(color-mix(in oklab, var(--fg) 12%, transparent) 1px, transparent 1px); background-size: 18px 18px; }
+
+/* کارت با نورافکن زیر نشانگر (--x/--y با ref تنظیم می‌شود، بدون رندر مجدد) */
+.spotlight { position: relative; isolation: isolate; }
+.spotlight::before {
+  content: ""; position: absolute; inset: -1px; border-radius: inherit; z-index: -1; opacity: 0; transition: opacity .3s;
+  background: radial-gradient(420px circle at var(--x, 50%) var(--y, 50%), color-mix(in oklab, var(--accent) 22%, transparent), transparent 45%);
 }
-@utility card { @apply rounded-2xl border border-border bg-card transition; }
-@utility card-hover { @apply hover:-translate-y-0.5 hover:border-accent/60 hover:shadow-lg; }
-@utility chip { @apply inline-flex items-center gap-1 rounded-full border border-border px-3 py-1 text-sm text-muted transition hover:border-accent hover:text-fg; }
+.spotlight:hover::before { opacity: 1; }
+
+@utility card { @apply rounded-2xl border border-border bg-card shadow-[var(--shadow)]; }
+@utility card-hover { @apply transition duration-300 hover:-translate-y-0.5 hover:border-accent/40; }
+@utility chip { @apply inline-flex items-center gap-1.5 rounded-full border border-border bg-card px-3 py-1.5 text-sm text-muted transition hover:border-accent/50 hover:text-fg active:scale-[0.98]; }
 @utility chip-on { @apply border-accent bg-accent text-accent-fg hover:text-accent-fg; }
-@utility btn { @apply inline-flex items-center justify-center gap-2 rounded-xl px-4 py-2.5 text-sm font-medium transition; }
-@utility btn-primary { @apply inline-flex items-center justify-center gap-2 rounded-xl px-4 py-2.5 text-sm font-medium transition bg-accent text-accent-fg hover:opacity-90; }
-@utility btn-ghost { @apply inline-flex items-center justify-center gap-2 rounded-xl px-4 py-2.5 text-sm font-medium transition border border-border hover:border-accent; }
+@utility btn { @apply inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-xl px-4 py-2.5 text-sm font-medium transition active:scale-[0.98]; }
+@utility btn-primary { @apply inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-xl px-4 py-2.5 text-sm font-medium transition active:scale-[0.98] bg-fg text-bg hover:opacity-90; }
+@utility btn-accent { @apply inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-xl px-4 py-2.5 text-sm font-medium transition active:scale-[0.98] bg-accent text-accent-fg hover:opacity-90; }
+@utility btn-ghost { @apply inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-xl px-4 py-2.5 text-sm font-medium transition active:scale-[0.98] border border-border bg-card hover:border-accent/50; }
 
-@media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
+@keyframes marquee { from { transform: translateX(0) } to { transform: translateX(calc(-50% - 0.5rem)) } }
+@keyframes caret { 50% { opacity: 0 } }
+
+@media (prefers-reduced-motion: reduce) { *, *::before { transition: none !important; animation: none !important; } }

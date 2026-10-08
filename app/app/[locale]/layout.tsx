@@ -1,5 +1,5 @@
 import type { Metadata } from "next"
-import { Geist, Vazirmatn, Noto_Naskh_Arabic } from "next/font/google"
+import { Geist, Geist_Mono, Vazirmatn, Noto_Naskh_Arabic } from "next/font/google"
 import { notFound } from "next/navigation"
 import { hasLocale, NextIntlClientProvider } from "next-intl"
 import { getTranslations, setRequestLocale } from "next-intl/server"
@@ -9,6 +9,7 @@ import { Header } from "@/components/header"
 import "../globals.css"
 
 const latin = Geist({ subsets: ["latin"], variable: "--font-latin" })
+const mono = Geist_Mono({ subsets: ["latin"], variable: "--font-mono-latin" })
 const fa = Vazirmatn({ subsets: ["arabic", "latin"], variable: "--font-fa" })
 const ar = Noto_Naskh_Arabic({ subsets: ["arabic"], variable: "--font-ar" })
 
@@ -40,15 +41,15 @@ export default async function LocaleLayout({
       lang={locale}
       dir={dirOf(locale)}
       suppressHydrationWarning
-      className={`${latin.variable} ${fa.variable} ${ar.variable}`}
+      className={`${latin.variable} ${mono.variable} ${fa.variable} ${ar.variable}`}
     >
-      <body className="min-h-dvh antialiased">
+      <body className="grain min-h-dvh antialiased">
         <ThemeProvider>
           <NextIntlClientProvider>
             <Header locale={locale} />
-            <main className="mx-auto w-full max-w-6xl px-4 py-8 sm:py-12">{children}</main>
+            <main className="mx-auto w-full max-w-7xl px-4 py-8 sm:py-12">{children}</main>
             <footer className="mt-16 border-t border-border">
-              <div className="mx-auto flex max-w-6xl flex-col gap-3 px-4 py-8 text-sm text-muted sm:flex-row sm:items-center">
+              <div className="mx-auto flex max-w-7xl flex-col gap-3 px-4 py-10 text-sm text-muted sm:flex-row sm:items-center">
                 <span className="font-semibold text-fg">{t("brand")}</span>
                 <span>{t("footerNote")}</span>
                 <span className="sm:ms-auto flex gap-4">

@@ -1,0 +1,23 @@
+{
+  "note": "شناسه‌ی مدل هر رده از env می‌آید (به سرویس‌دهنده‌ی شما بستگی دارد). credits_per_1k = اعتبار مصرفی به‌ازای هر ۱۰۰۰ توکن (ورودی+خروجی). قیمت‌گذاری: docs/14-chat-and-usage-pricing.md",
+  "tiers": [
+    { "id": "economy", "env": "LLM_MODEL_ECONOMY", "credits_per_1k": 1, "max_output": 1200, "free": true,
+      "names": { "fa": "اقتصادی", "en": "Economy", "ar": "اقتصادي" },
+      "desc": { "fa": "سریع و ارزان؛ برای متن کوتاه، ترجمه و خلاصه", "en": "Fast and cheap: short text, translation, summaries", "ar": "سريع ورخيص: نصوص قصيرة وترجمة وتلخيص" } },
+    { "id": "standard", "env": "LLM_MODEL_STANDARD", "credits_per_1k": 4, "max_output": 2500, "free": false,
+      "names": { "fa": "استاندارد", "en": "Standard", "ar": "قياسي" },
+      "desc": { "fa": "کیفیت بالا برای محتوا، کد و تحلیل", "en": "High quality for content, code and analysis", "ar": "جودة عالية للمحتوى والكود والتحليل" } },
+    { "id": "premium", "env": "LLM_MODEL_PREMIUM", "credits_per_1k": 15, "max_output": 4000, "free": false,
+      "names": { "fa": "پیشرفته", "en": "Premium", "ar": "متقدم" },
+      "desc": { "fa": "قوی‌ترین مدل برای کارهای پیچیده و استدلال", "en": "Strongest model for complex reasoning", "ar": "أقوى نموذج للمهام المعقدة" } }
+  ],
+  "free_daily_credits": 30,
+  "plus_monthly_credits": 1500,
+  "max_input_chars": 12000,
+  "credit_packs_irt": [
+    { "credits": 200, "price": 49000 },
+    { "credits": 600, "price": 129000 },
+    { "credits": 2000, "price": 349000 }
+  ],
+  "markup_target": 2.5
+}

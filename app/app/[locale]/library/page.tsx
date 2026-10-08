@@ -4,6 +4,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server"
 import { query, type Loc, type Sort } from "@/lib/catalog"
 import { FIELDS, KIND_NAMES, LEVEL_NAMES, type Kind, type Level } from "@/lib/taxonomy"
 import { PromptCard } from "@/components/prompt-card"
+import { FieldIcon } from "@/lib/icons"
 import { SearchBox } from "@/components/search-box"
 
 function Chip({ on, to, children }: { on: boolean; to: string; children: React.ReactNode }) {
@@ -35,14 +36,14 @@ export default async function Library({ params, searchParams }: { params: Promis
   return (
     <div className="space-y-6">
       <div className="space-y-4">
-        <h1 className="text-3xl font-bold">{field ? `${field.emoji} ${field.names[locale]}` : t("lib.title")}</h1>
+        <h1 className="flex items-center gap-3 text-4xl font-bold tracking-tight">{field && <span className="grid size-11 place-items-center rounded-2xl bg-accent-soft text-accent"><FieldIcon id={field.id} className="size-6" /></span>}{field ? field.names[locale] : t("lib.title")}</h1>
         <SearchBox locale={locale} placeholder={t("search")} button={t("searchBtn")} defaultValue={sp.q} />
       </div>
 
-      <div className="space-y-3 text-sm">
-        <div className="flex gap-2 overflow-x-auto pb-1">
+      <div className="sticky top-16 z-30 -mx-4 space-y-3 border-b border-border/60 bg-bg/85 px-4 py-3 text-sm backdrop-blur-xl">
+        <div className="flex gap-2 overflow-x-auto pb-1 [scrollbar-width:none]">
           <Chip on={!sp.field} to={href({ field: undefined })}>{t("all")}</Chip>
-          {FIELDS.map((f) => <Chip key={f.id} on={sp.field === f.id} to={href({ field: f.id })}>{f.emoji} {f.names[locale]}</Chip>)}
+          {FIELDS.map((f) => <Chip key={f.id} on={sp.field === f.id} to={href({ field: f.id })}><FieldIcon id={f.id} className="size-4" />{f.names[locale]}</Chip>)}
         </div>
         <div className="flex flex-wrap items-center gap-2">
           {(Object.keys(KIND_NAMES) as Kind[]).map((k) => <Chip key={k} on={sp.kind === k} to={href({ kind: sp.kind === k ? undefined : k })}>{KIND_NAMES[k][locale]}</Chip>)}

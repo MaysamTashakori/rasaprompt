@@ -1,13 +1,14 @@
 {
  "brand": "Rasa Prompt",
  "tagline": "The right prompt for every task",
- "subtitle": "A curated prompt library for everyday users, coders and professionals — transparent sources, precise categories, and Telegram & Bale bots.",
+ "subtitle": "Ready prompts for writing, coding and business. Fill the variables and run them right here.",
  "nav": {
   "library": "Library",
   "pricing": "Pricing",
   "bots": "Bots",
   "saved": "Saved",
-  "sources": "Sources"
+  "sources": "Sources",
+  "chat": "Run"
  },
  "search": "Search prompts…",
  "searchBtn": "Search",
@@ -20,11 +21,11 @@
  "aud": {
   "title": "For everyone, at every level",
   "users": "Everyday users",
-  "usersD": "Writing, translation, learning and daily tasks — simple and fast.",
+  "usersD": "Writing, translation, learning and daily tasks, simple and fast.",
   "coders": "Coders",
-  "codersD": "Code review, architecture, building apps with Claude Code and Cursor.",
+  "codersD": "Code review, architecture and building apps with Claude Code and Cursor.",
   "pros": "Professionals",
-  "prosD": "Marketing, sales, legal, finance and management — structured and precise.",
+  "prosD": "Marketing, sales, legal, finance and management, structured and precise.",
   "skills": "Skills & agents",
   "skillsD": "System prompts and Skills for AI agents."
  },
@@ -36,10 +37,10 @@
  "viewAll": "View all",
  "bots": {
   "title": "Prompts in Telegram and Bale",
-  "desc": "Search, prompt of the day and trending prompts right inside your messenger.",
+  "desc": "Search, prompt of the day and trending prompts, right in your messenger.",
   "telegram": "Telegram bot",
   "bale": "Bale bot",
-  "soon": "Coming soon"
+  "soon": "Soon"
  },
  "faq": {
   "title": "FAQ",
@@ -70,7 +71,7 @@
   "sort": "Sort",
   "sortFeatured": "Featured",
   "sortTrending": "Trending",
-  "sortAz": "A–Z",
+  "sortAz": "A-Z",
   "clear": "Clear filters",
   "onlyFa": "Persian title only"
  },
@@ -96,7 +97,8 @@
   "untested": "Not tested yet",
   "enOnly": "This prompt's text is only available in another language for now; a translation is queued.",
   "careful": "Not a substitute for professional (medical, legal or financial) advice.",
-  "popularity": "Popularity"
+  "popularity": "Popularity",
+  "run": "Run on Rasa"
  },
  "savedTitle": "My saved prompts",
  "savedEmpty": "Nothing saved yet. Tap “Save” on any prompt page.",
@@ -121,5 +123,66 @@
  },
  "guarantee": "7-day money-back guarantee on paid products.",
  "footer": "Built with Next.js and FarsiUI",
- "footerNote": "Open-source content belongs to its authors under the stated licenses."
+ "footerNote": "Open-source content belongs to its authors under the stated licenses.",
+ "chat": {
+  "title": "Run a prompt",
+  "sub": "Run prompts and get the output right here.",
+  "placeholder": "Write your prompt or message…",
+  "send": "Send",
+  "stop": "Stop",
+  "clear": "New chat",
+  "credits": "Credits",
+  "free": "Free today",
+  "paid": "Purchased",
+  "perK": "{n} credits / 1k tokens",
+  "paidOnly": "This tier needs purchased credits.",
+  "noCredits": "Not enough credits. Free quota refills tomorrow, or buy a pack.",
+  "tooLong": "Text is too long.",
+  "rate": "Too many requests; please wait.",
+  "policy": "This request conflicts with our content policy.",
+  "error": "Error connecting to the model.",
+  "notConfigured": "This tier's model is not configured yet.",
+  "copy": "Copy",
+  "copied": "Copied",
+  "empty": "Bring a prompt from the library or start with one of these:",
+  "you": "You",
+  "ai": "Rasa",
+  "packs": "Credit packs",
+  "packsNote": "Payments coming soon."
+ },
+ "hero": {
+  "cta": "Run a prompt",
+  "demoTitle": "Instagram caption for a shop",
+  "demoRun": "Run",
+  "demoOut": "Sample output",
+  "demoV": [
+   "Product",
+   "Audience",
+   "Offer"
+  ],
+  "demoVals": [
+   [
+    "Handmade leather bag",
+    "Women aged 25 to 40",
+    "Free shipping till Friday"
+   ],
+   [
+    "Fresh-roasted coffee",
+    "Students and office workers",
+    "15% off first order"
+   ],
+   [
+    "Online design course",
+    "New designers",
+    "First session free"
+   ]
+  ],
+  "demoOuts": [
+   "Handmade to last a lifetime. 👜 The bag that goes everywhere with you...",
+   "Mornings without fresh coffee? Never. ☕ Roasted today, in your cup tomorrow...",
+   "Start design the right way. 🎨 Your first session is on us..."
+  ]
+ },
+ "marquee": "Trending this week",
+ "rank": "Rank"
 }
